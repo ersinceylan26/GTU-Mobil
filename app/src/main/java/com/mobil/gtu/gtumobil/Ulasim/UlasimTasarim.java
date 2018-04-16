@@ -6,9 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.bignerdranch.expandablerecyclerview.Model.ParentObject;
 import com.mobil.gtu.gtumobil.R;
-import com.mobil.gtu.gtumobil.Ulasim.Adapter.MyAdapter;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,49 +19,46 @@ import java.util.List;
 public class UlasimTasarim extends AppCompatActivity
 {
     RecyclerView recyclerView;
-
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        ((MyAdapter) recyclerView.getAdapter()).onSaveInstanceState(outState);
-    }
+    UlasimAdapter ulasimAdapter;
+    List<Parent> parents;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ulasim_tasarim);
+        getParents();
+        ulasimAdapter = new UlasimAdapter(parents);
 
         recyclerView = (RecyclerView) findViewById(R.id.myRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(ulasimAdapter);
 
-        MyAdapter adapter = new MyAdapter(this,initData());
-        adapter.setParentClickableViewAnimationDefaultDuration();
-        adapter.setParentAndIconExpandOnClick(true);
-
-        recyclerView.setAdapter(adapter);
 
 
     }
 
-    private List<ParentObject> initData()
-    {
-        TitleCreator titleCreator = TitleCreator.get(this);
-        List<TitleParent> titles = titleCreator.getAll();
-        List<ParentObject> parentObjects = new ArrayList<>();
+    public List<Parent> getParents() {
 
-        for(TitleParent title: titles)
-        {
-            List<Object> childList = new ArrayList<>();
-            childList.add(new TitleChild("Add to contacts","SendMessage"));
-            title.setChildObjectList(childList);
-            parentObjects.add(title);
-        }
+        parents = new ArrayList<>(6);
+        List<Child> children = new ArrayList<>(3);
 
-        return parentObjects;
+        children.add(new Child("asdasd"));
+        children.add(new Child("asdasd"));
+        children.add(new Child("asdasd"));
 
+        parents.add(new Parent("17B (Pendik Yönü)", children));
+
+        parents.add(new Parent("17B (Gebze Yönü)", children));
+
+        parents.add(new Parent("490 (Pendik Yönü)", children));
+
+        parents.add(new Parent("490 (Pendik Yönü)", children));
+
+        parents.add(new Parent("Ring (Danışma Hareket)", children));
+
+        parents.add(new Parent("Ring (Kimya Hareket)", children));
+
+
+        return parents;
     }
-
-
-
 }
