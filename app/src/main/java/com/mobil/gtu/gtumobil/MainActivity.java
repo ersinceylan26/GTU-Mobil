@@ -18,6 +18,7 @@ import android.view.MenuItem;
 
 import com.mobil.gtu.gtumobil.Etkinlik.EtkinlikMainActivity;
 import com.mobil.gtu.gtumobil.Login.LoginActivity;
+import com.mobil.gtu.gtumobil.Rehber.RehberActivity;
 import com.mobil.gtu.gtumobil.Ulasim.UlasimTasarim;
 
 public class MainActivity extends AppCompatActivity
@@ -138,7 +139,7 @@ public class MainActivity extends AppCompatActivity
 
         switch (view.getId()) {
 
-            case R.id.login : i = new Intent(this,LoginActivity.class);startActivity(i); break;
+            case R.id.login : i = new Intent(this,RehberActivity.class);startActivity(i); break;
             case R.id.ulasim : i = new Intent(this,UlasimTasarim.class);startActivity(i); break ;
             case R.id.etkinlikler : i = new Intent(this,EtkinlikMainActivity.class);startActivity(i); break;
 /*

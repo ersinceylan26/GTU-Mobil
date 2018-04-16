@@ -22,6 +22,7 @@
         <activity android:name=".Login.LoginActivity" />
         <activity android:name=".Ulasim.UlasimTasarim" />
         <activity android:name=".Etkinlik.EtkinlikMainActivity" />
+        <activity android:name=".Rehber.RehberActivity" />
     </application>
 
 </manifest>

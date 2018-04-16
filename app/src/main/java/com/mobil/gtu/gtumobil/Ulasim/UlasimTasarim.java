@@ -46,6 +46,7 @@ public class UlasimTasarim extends AppCompatActivity
         children.add(new Child("asdasd"));
         children.add(new Child("asdasd"));
 
+
         parents.add(new Parent("17B (Pendik Yönü)", children));
 
         parents.add(new Parent("17B (Gebze Yönü)", children));
