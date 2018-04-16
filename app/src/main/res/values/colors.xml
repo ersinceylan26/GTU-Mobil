@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#455A64</color>
+    <color name="colorPrimaryDark">#37474F</color>
+    <color name="colorAccent">#25666f</color>
+    <color name="gtu_blue">#233b77</color>
+    <color name="gtu_red">#c1203b</color>
+    <color name="gtu_yellow">#f39314</color>
+    <color name="gtu_black">#000000</color>
+    <color name="gtu_white">#ffffff</color>
+    <color name="deep_purple">#7c4dff</color>
+    <color name="yellow">#ffb300</color>
+    <color name="aciksari">#ffc107</color>
+    <color name="green">#26A69A</color>
+    <color name="apollo">#313338</color>
+    <color name="kahve">#8D6E63</color>
 </resources>
