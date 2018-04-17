@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@color/gtu_yellow"
+    android:background="@color/gri"
     android:orientation="vertical"
     android:layout_height="match_parent">
 
@@ -13,12 +13,14 @@
         android:layout_height="wrap_content">
 
         <EditText
+            android:id="@+id/rehberAramaTxt"
             android:textColor="@color/gtu_white"
             android:layout_margin="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <Button
+            android:id="@+id/rehberAramaButton"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,7 +36,7 @@
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/gtu_yellow"
+        android:background="@color/gri"
         android:id="@+id/rehberRecycler">
 
 
