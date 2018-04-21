@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".Splash"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -24,6 +24,12 @@
         <activity android:name=".Ulasim.UlasimTasarim" />
         <activity android:name=".Etkinlik.EtkinlikMainActivity" />
         <activity android:name=".Rehber.RehberActivity" />
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".AnaMenu.AnaMenuSortWayListActiviy" />
+        <activity android:name=".Haberler.NewsListActivity" />
+        <activity android:name=".Haberler.PostActivity" />
+
     </application>
 
 </manifest>
