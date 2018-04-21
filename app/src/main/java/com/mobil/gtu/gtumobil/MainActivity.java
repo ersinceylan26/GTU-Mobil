@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.mobil.gtu.gtumobil.AnaMenu.AnaMenuSortWayListActiviy;
+import com.mobil.gtu.gtumobil.AnaMenu.MenuActivity;
 import com.mobil.gtu.gtumobil.Etkinlik.EtkinlikMainActivity;
 import com.mobil.gtu.gtumobil.Haberler.NewsListActivity;
 import com.mobil.gtu.gtumobil.Rehber.RehberActivity;
@@ -23,12 +24,6 @@ import com.mobil.gtu.gtumobil.Ulasim.UlasimTasarim;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,View.OnClickListener {
-
-
-    CardView cardViewUlasimGlobal;
-    CardView cardViewHaberlerGlobal;
-    CardView cardViewLogin2;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,17 +37,15 @@ public class MainActivity extends AppCompatActivity
         //CardView cardViewLogin = (CardView) findViewById(R.id.login);
         CardView cardViewKisayolEkleCikar = (CardView) findViewById(R.id.kisayolekle);
         CardView cardViewEtkinlik = (CardView) findViewById(R.id.etkinlikler);
+        CardView cardViewAcilTelefonlar = (CardView) findViewById(R.id.aciltelefonlar);
 
 
         cardViewUlasim.setOnClickListener(this);
         cardViewHaberler.setOnClickListener(this);
+        cardViewAcilTelefonlar.setOnClickListener(this);
         //cardViewLogin.setOnClickListener(this);
         cardViewKisayolEkleCikar.setOnClickListener(this);
         cardViewEtkinlik.setOnClickListener(this);
-
-        cardViewUlasimGlobal=cardViewUlasim;
-
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -85,14 +78,12 @@ public class MainActivity extends AppCompatActivity
             case R.id.ulasim : i = new Intent(this,UlasimTasarim.class);startActivity(i); break ;
             case R.id.haberler : i = new Intent(this,NewsListActivity.class);startActivity(i); break ;
             case R.id.etkinlikler : i = new Intent(this,EtkinlikMainActivity.class);startActivity(i); break;
-            case R.id.kisayolekle : i = new Intent(this,AnaMenuSortWayListActiviy.class);startActivity(i); break;
+            case R.id.kisayolekle : i = new Intent(this,MenuActivity.class);startActivity(i); break;
             default:break;
 
         }
 
     }
-
-
 
 
     @Override

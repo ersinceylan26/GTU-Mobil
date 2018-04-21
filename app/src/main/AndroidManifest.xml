@@ -29,6 +29,7 @@
         <activity android:name=".AnaMenu.AnaMenuSortWayListActiviy" />
         <activity android:name=".Haberler.NewsListActivity" />
         <activity android:name=".Haberler.PostActivity" />
+        <activity android:name=".AnaMenu.MenuActivity" />
 
     </application>
 
