@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.TextInputLayout
+
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:id="@+id/etkinlikBasligi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Etkinlik Adı"
+                tools:layout_editor_absoluteX="34dp"
+                tools:layout_editor_absoluteY="47dp"
+                tools:ignore="MissingConstraints" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:id="@+id/etkinlikTarihi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Etkinlik Tarihi"
+                tools:layout_editor_absoluteX="34dp"
+                tools:layout_editor_absoluteY="47dp"
+                tools:ignore="MissingConstraints" />
+
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:id="@+id/etkinlikMekani"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Etkinlik  Mekanı"
+                tools:layout_editor_absoluteX="34dp"
+                tools:layout_editor_absoluteY="47dp"
+                tools:ignore="MissingConstraints" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:id="@+id/etkinlikMuracaat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Etkinlik Müracaat"
+                tools:layout_editor_absoluteX="34dp"
+                tools:layout_editor_absoluteY="47dp"
+                tools:ignore="MissingConstraints" />
+
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.TextInputLayout
+
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_marginTop="30dp"
+                android:hint="Etkinlik Açıklaması"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:id="@+id/etkinlikAciklama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|left"
+                android:inputType="textMultiLine"
+                android:overScrollMode="always"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                android:lines="6"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:scrollHorizontally="false"
+                android:background="@drawable/justborder" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:id="@+id/imageekle"
+            android:layout_width="217dp"
+            android:layout_height="wrap_content"
+            android:text="Afiş Ekle"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="176dp"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <Button
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:id="@+id/etkinlikSend"
+        android:layout_width="217dp"
+        android:layout_height="wrap_content"
+        android:text="Gönder"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="176dp"
+        tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
+</LinearLayout>

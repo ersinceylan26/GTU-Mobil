@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "288491090654",
+    "firebase_url": "https://gtukampus.firebaseio.com",
+    "project_id": "gtukampus",
+    "storage_bucket": "gtukampus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288491090654:android:739e24982f759033",
+        "android_client_info": {
+          "package_name": "com.mobil.gtu.gtumobil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "288491090654-pkq3iup2i1qmrroteh20d7ctdv9crku1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobil.gtu.gtumobil",
+            "certificate_hash": "223d37b5fcded44c47ef4f3839b7622f1f512127"
+          }
+        },
+        {
+          "client_id": "288491090654-igc1fc1arcjn7u6gqu8vfu4enb8v21pj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoUE0zUNOIwIJvVGV5nzS4o_odn0ZgMLI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "288491090654-igc1fc1arcjn7u6gqu8vfu4enb8v21pj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

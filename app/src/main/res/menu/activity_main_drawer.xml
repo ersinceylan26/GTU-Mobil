@@ -3,36 +3,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
-    </group>
-
-    <item android:title="Communicate">
+    <item android:title="Apollo">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_notlar"
+                android:title="Notlarım" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_transkript"
+                android:title="Transkriptim" />
+            <item
+                android:id="@+id/nav_yemekbakiye"
+                android:title="Yemek Bakiye" />
+            <item
+                android:id="@+id/nav_dersprogrami"
+                android:title="Ders Programı" />
         </menu>
     </item>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_ulasim"
+            android:title="Ulaşım" />
+        <item
+            android:id="@+id/nav_haberler"
+            android:title="GTU Haberler" />
+        <item
+            android:id="@+id/nav_telefonlar"
+            android:title="Acil Telefonlar" />
+        <item
+            android:id="@+id/nav_etkinlikler"
+            android:title="Etkinlikler" />
+    </group>
+
+
 
 </menu>
