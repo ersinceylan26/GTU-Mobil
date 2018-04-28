@@ -32,14 +32,12 @@ public class UlasimTasarim extends AppCompatActivity
         recyclerView = (RecyclerView) findViewById(R.id.myRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(ulasimAdapter);
+
         recyclerView.animate()
                 .translationY(0)
                 .setDuration(1000)
                 .setStartDelay(300);
-
-
-
-    }
+        }
 
     public List<Parent> getParents() {
 

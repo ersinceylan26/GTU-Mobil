@@ -29,7 +29,6 @@ public class RehberActivity extends AppCompatActivity
     Button rehberSearch;
     EditText rehberAramaText;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

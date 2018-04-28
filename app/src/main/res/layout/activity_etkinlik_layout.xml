@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="10dp"
+    android:background="@color/arkaplan"
     android:layout_margin="8dp"
     android:layout_height="wrap_content">
 
