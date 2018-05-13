@@ -26,4 +26,8 @@ public class MenuClass {
         this.menuName = menuName;
     }
 
+    @Override
+    public String toString() {
+        return String.valueOf(isSelected);
+    }
 }

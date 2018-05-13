@@ -1,40 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
 
-    <item android:title="Apollo">
-        <menu>
-            <item
-                android:id="@+id/nav_notlar"
-                android:title="Notlarım" />
-            <item
-                android:id="@+id/nav_transkript"
-                android:title="Transkriptim" />
-            <item
-                android:id="@+id/nav_yemekbakiye"
-                android:title="Yemek Bakiye" />
-            <item
-                android:id="@+id/nav_dersprogrami"
-                android:title="Ders Programı" />
-        </menu>
-    </item>
-
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_ulasim"
-            android:title="Ulaşım" />
-        <item
-            android:id="@+id/nav_haberler"
-            android:title="GTU Haberler" />
-        <item
-            android:id="@+id/nav_telefonlar"
-            android:title="Acil Telefonlar" />
-        <item
-            android:id="@+id/nav_etkinlikler"
-            android:title="Etkinlikler" />
-    </group>
-
-
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<group android:checkableBehavior="single">
+    <item
+        android:id="@+id/nav_ulasim"
+        android:title="Ulaşım" />
+    <item
+        android:id="@+id/nav_haberler"
+        android:title="GTU Haberler" />
+    <item
+        android:id="@+id/nav_telefonlar"
+        android:title="Acil Telefonlar" />
+    <item
+        android:id="@+id/nav_etkinlikler"
+        android:title="Etkinlikler" />
+    <item
+        android:id="@+id/nav_notlar"
+        android:title="Notlarım" />
+    <item
+        android:id="@+id/nav_transkript"
+        android:title="Transkriptim" />
+    <item
+        android:id="@+id/nav_yemekbakiye"
+        android:title="Yemek Bakiye" />
+    <item
+        android:id="@+id/nav_dersprogrami"
+        android:title="Ders Programı" />
+</group>
 </menu>

@@ -28,14 +28,14 @@ public class EtkinlikMainActivity extends AppCompatActivity {
 
         viewPagerAdapter.addFragment(new FragmentGoster(),"");
         viewPagerAdapter.addFragment(new FragmentEkleme(),"");
-
+        viewPagerAdapter.addFragment(new FragmentDuzenleme(),"");
 
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
-        tabLayout.getTabAt(0).setIcon(R.drawable.ic_search_white_24dp);
+        tabLayout.getTabAt(0).setIcon(R.drawable.searchgeniswhite);
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_add_circle_black_24dp);
-
+        tabLayout.getTabAt(2).setIcon(R.drawable.edit);
 
     }
 

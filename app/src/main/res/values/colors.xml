@@ -15,4 +15,9 @@
     <color name="apollo">#313338</color>
     <color name="kahve">#8D6E63</color>
     <color name="gri">#ababab</color>
+    <color name="koyugri">#8f8f8f</color>
+    <color name="acikgri">#e7e7e7</color>
+    <color name="arkaplan">#fffffa</color>
+    <color name="sitearkaplan">#fbfbf9</color>
+
 </resources>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">gtuMobil</string>
+    <string name="app_name"> GTÜ Mobil</string>
     <string-array name="spinnerItems">
         <item>Genel</item>
         <item>Bilgisayar Mühendisliği</item>
