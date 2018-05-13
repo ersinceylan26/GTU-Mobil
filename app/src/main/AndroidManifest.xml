@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mobil.gtu.gtumobil">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:largeHeap="true"
         android:allowBackup="true"
@@ -38,13 +40,13 @@
         <activity android:name=".AnaMenu.AnaMenuSortWayListActiviy"
             android:theme="@style/AppTheme.NoActionBar"/>
 
+        <activity android:name=".AnaMenu.MenuActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Haberler.NewsListActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-
-        <activity android:name=".Haberler.PostActivity"
+        <activity android:name=".Fetch17b"
             android:theme="@style/AppTheme.NoActionBar"/>
-
-        <activity android:name=".AnaMenu.MenuActivity"
+        <activity android:name=".Haberler.NewContentActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
 
 

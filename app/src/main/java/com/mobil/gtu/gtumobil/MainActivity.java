@@ -6,7 +6,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.CardView;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,10 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
-import com.mobil.gtu.gtumobil.AnaMenu.AnaMenuSortWayListActiviy;
 import com.mobil.gtu.gtumobil.AnaMenu.MenuActivity;
 import com.mobil.gtu.gtumobil.AnaMenu.MenuClass;
 import com.mobil.gtu.gtumobil.AnaMenu.Veritabani;
@@ -130,7 +126,7 @@ public class MainActivity extends AppCompatActivity
         switch (view.getId()) {
 
             case R.id.aciltelefonlar : i = new Intent(this,RehberActivity.class);startActivity(i); break;
-            case R.id.ulasim : i = new Intent(this,UlasimTasarim.class);startActivity(i); break ;
+            case R.id.ulasim : i = new Intent(this,NewsListActivity.class);startActivity(i); break ;
             case R.id.haberler : i = new Intent(this,NewsListActivity.class);startActivity(i); break ;
             case R.id.etkinlikler : i = new Intent(this,EtkinlikMainActivity.class);startActivity(i); break;
             case R.id.kisayolekle : i = new Intent(this,MenuActivity.class);startActivity(i); break;

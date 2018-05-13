@@ -1,183 +1,94 @@
 package com.mobil.gtu.gtumobil.Haberler;
 
-import android.app.Activity;
-import android.content.Context;
+import android.app.ProgressDialog;
 import android.content.Intent;
-import android.net.ConnectivityManager;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.support.v7.app.AppCompatActivity;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.mobil.gtu.gtumobil.R;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
 
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
 import java.io.IOException;
 
-/**
- * Created by yasinacikgoz on 25.02.2018.
- */
-
-public class NewsListActivity extends Activity {
-
-    ListView listView;
-    Context context = this ;
-    ProgressBar pb;
-    private final String url = "http://www.gtu.edu.tr";
-    private final int max_news = 12;
-    Post[] newsArray = new Post[max_news];
-
-
+public class NewsListActivity extends AppCompatActivity
+{
+    private ProgressDialog progressDialog;
+    private WebView wbNewList;
+    private String newsListUrl="";
+    private String url17B="";
+    String data="";
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_newslist);
-        listView = findViewById(R.id.listView);
 
-        pb = findViewById(R.id.progressBar);
+        setContentView(R.layout.activity_news_list_layout);
 
-        if(isNetworkConnected()){
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    for (int i = 0 ; i < max_news ; ++i){
-                        Post tempPost = new Post();
-                        newsArray[i] = tempPost;
-                    }
+        wbNewList = findViewById(R.id.wb);
+        newsListUrl="http://www.gtu.edu.tr/kategori/8/0/display.aspx?languageId=1";
+        wbNewList.getSettings().setJavaScriptEnabled(true);
+        wbNewList.getSettings().setDefaultTextEncodingName("utf-8");
+        wbNewList.setBackgroundColor(Color.TRANSPARENT);
 
-                }
-            }).start();
-            PostAdapter postAdapter = new PostAdapter();
-            listView.setAdapter(postAdapter);
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                public void onItemClick(AdapterView<?> parent, View view,
-                                        int position, long id) {
+        wbNewList.setWebViewClient(new WebViewClient()   {
 
-                    if(!newsArray[position].getLink().equals("")){
-                        Intent myIntent = new Intent(view.getContext(), PostActivity.class);
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                Intent myIntent = new Intent(getBaseContext(), NewContentActivity.class);
+                myIntent.putExtra("nameUrl", url);
+                startActivity(myIntent);
+                return true;
+            }
 
-                        myIntent.putExtra("KEY", newsArray[position]);
-                        startActivityForResult(myIntent, 0);
+        });
 
-                    }
-
-                }
-            });
-
-            new ParsePage().execute();
-        } else{
-            Toast.makeText(context, "No internet connection", Toast.LENGTH_LONG).show();
-        }
-    }
-    private boolean isNetworkConnected() {
-        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-
-        return cm.getActiveNetworkInfo() != null;
+        new fetchNewsList().execute();
     }
 
-    private class ParsePage extends AsyncTask<String,Void,String> {
+
+    public class fetchNewsList extends AsyncTask<Void,Void,Void> {
 
         @Override
-        protected String doInBackground(String... strings) {
-            //load the document !
-            Document doc;
-            try{
-                //Connect to the website and get the HTML!
-                doc = Jsoup.connect(url).get();
-                Elements elements = doc.getElementsByClass("news-img");
-                Elements contents = elements.select("a");
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            wbNewList.loadDataWithBaseURL(null,data,"text/html","UTF-8",null);
+        }
 
-                Elements news = contents.select("img");
+        @Override
+        protected Void doInBackground(Void... voids) {
 
+            try {
+                Document newsListContent = Jsoup.connect(newsListUrl).get();
 
-                for(int i = 0; i < max_news; ++i){
-                        newsArray[i] = new Post(news.get(i).attr("alt"),
-                                contents.get(i).attr("href"),
-                                url + news.get(i).attr("src").
-                                        replace("AjaxResize.ashx?file=", "").
-                                        replace("&width=190&height=190", ""));
+                Element style = newsListContent.head();
+                Elements newList = newsListContent.select("div#more-news");
+                Elements hhh = newList.select("li");
 
+                data+=style;
+                data+="<ul>";
+
+                for(int i = 0; i < 20; i++) {
+                    data += hhh.get(i).toString();
+                    data+="<br>";
                 }
 
-            }catch (IOException e){
+                data+="</ul>";
 
+            } catch (IOException e) {
                 e.printStackTrace();
             }
-            return "Executed";
-        }
-        protected void onPostExecute(String result){
 
-            listView.setVisibility(View.VISIBLE);
-            pb.setVisibility(View.GONE);
-            listView.invalidateViews();
+            return null;
         }
 
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            listView.setVisibility(View.INVISIBLE);
-        }
-
-    }
-    class PostAdapter extends BaseAdapter {
-
-
-        @Override
-        public int getCount() {
-            return newsArray.length;
-        }
-
-        @Override
-        public Post getItem(int i) {
-            return newsArray[i];
-        }
-
-        @Override
-        public long getItemId(int i) {
-            return 0;
-        }
-
-        @Override
-        public View getView(int i, View view, ViewGroup viewGroup) {
-            view = getLayoutInflater().inflate(R.layout.post_layout,null);
-            ImageView imageView = view.findViewById(R.id.newsImg);
-            final TextView title_txt = view.findViewById(R.id.newsText);
-
-            if (!newsArray[i].getImgLink().equals("")) {
-                Picasso
-                        .with(context)
-                        .load(newsArray[i].getImgLink())
-                        .fit()
-                        .into(imageView, new Callback() {
-                            @Override
-                            public void onSuccess() {
-                                // Log.d("Success","Compelete");
-                            }
-
-                            @Override
-                            public void onError() {
-
-                            }
-                        });
-
-                title_txt.setText(newsArray[i].getTitle());
-
-            }
-
-            return view;
-        }
     }
 
 }
