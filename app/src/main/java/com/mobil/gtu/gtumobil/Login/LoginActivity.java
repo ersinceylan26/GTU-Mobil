@@ -49,10 +49,13 @@ public class LoginActivity extends AppCompatActivity {
 
         final User user;
         final LoginDatabase vt = new LoginDatabase(LoginActivity.this);
+        errorCase.setVisibility(View.GONE);
+
+        //vt.deleteData();
 
         user = vt.fetchData();
 
-        if(user.getPassword()!=null || user.getName()!=null)
+        if(user.getName().compareTo("null")!=0 || user.getPassword().compareTo("null")!=0 )
         {
             editTextMail.setText(user.getName());
             editTextPass.setText(user.getPassword());
@@ -60,9 +63,12 @@ public class LoginActivity extends AppCompatActivity {
             editTextMail.setEnabled(false);
             editTextPass.setFocusable(false);
             editTextPass.setEnabled(false);
+
+            rememberMe.setChecked(true);
         }
         else
         {
+
             /*ProgressDialog progress;
 
             progress = new ProgressDialog(this);
@@ -76,18 +82,17 @@ public class LoginActivity extends AppCompatActivity {
 
         }
 
-        Log.d("yasa",user.getName()+user.getPassword());
-
         new fetchNewsList().execute();
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
-                if(editTextPass.getText().equals("") || editTextMail.equals(""))
+                if(editTextPass.getText().toString().matches("") ||
+                        editTextMail.getText().toString().matches(""))
                 {
-                    Log.w("errorgeldi", user.getName() + user.getPassword());
-                    errorCase.setText("* Tüm Alanları Doldurunuz.");
+                    Log.w("orospu", user.getName() + user.getPassword());
+                    errorCase.setText("* Tüm Alanları Doldurunuz");
                     errorCase.setVisibility(View.VISIBLE);
                 }
                 else
@@ -97,15 +102,22 @@ public class LoginActivity extends AppCompatActivity {
 
                     Log.w("asda", user.getName() + user.getPassword());
 
-                    vt.addData(editTextMail.toString(),editTextPass.toString());
+                    CheckBox rememberMe = findViewById(R.id.rememberMe);
+                    if(rememberMe.isChecked())
+                    {
+                        Log.w("errorgeldi", user.getName() + user.getPassword());
+                        vt.addData(editTextMail.getText().toString(),editTextPass.getText().toString());
+                    }
+                    else
+                    {
+                        vt.deleteData();
+                    }
+
+
                 }
 
 
-                CheckBox rememberMe = findViewById(R.id.rememberMe);
-                if(rememberMe.isChecked())
-                {
-                    Log.w("errorgeldi", user.getName() + user.getPassword());
-                }
+
 
 
 

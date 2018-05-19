@@ -38,6 +38,7 @@ public class LoginDatabase extends SQLiteOpenHelper {
     public User fetchData()
     {
         SQLiteDatabase db = this.getReadableDatabase();
+
         User user =new User();
         String[] stunlar = {ROW_ID,ROW_NAME,ROW_PASSWORD};
         Cursor cursor = db.query(TABLO, stunlar,null,null,null,null,null);
@@ -46,9 +47,15 @@ public class LoginDatabase extends SQLiteOpenHelper {
 
             user.name=cursor.getString(1);
             user.password=cursor.getString(2);
+
+            return user;
         }
 
+        user.setName("null");
+        user.setPassword("null");
+
         return user;
+
     }
 
     @Override
@@ -82,6 +89,12 @@ public class LoginDatabase extends SQLiteOpenHelper {
         }
         catch (Exception e){
         }
+    }
+
+    public void deleteData()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("delete from "+ TABLO);
     }
 
 }
