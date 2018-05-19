@@ -27,17 +27,29 @@
                android:src="@drawable/logobutterfly"
                tools:ignore="MissingConstraints" />
 
+           <TextView
+               android:id="@+id/errorCase"
+               android:layout_marginTop="20dp"
+               android:layout_width="300dp"
+               android:layout_gravity="center"
+               android:layout_height="wrap_content"
+               android:ems="10"
+               android:text="* Tüm Alanları Doldurunuz."
+               android:textColor="@color/gtu_red" />
+
            <EditText
-               android:layout_marginTop="40dp"
+               android:id="@+id/editTextMail"
+               android:layout_marginTop="20dp"
                android:layout_width="300dp"
                android:layout_gravity="center"
                android:layout_height="wrap_content"
                android:ems="10"
                android:drawableLeft="@drawable/ic_assignment_ind_black_24dp"
                android:inputType="textPersonName"
-               android:hint="Okul No" />
+               android:hint="Okul Mail" />
 
            <EditText
+               android:id="@+id/editTextPass"
                android:layout_marginTop="10dp"
                android:layout_width="300dp"
                android:layout_gravity="center"
@@ -47,10 +59,18 @@
                android:inputType="textPassword"
                android:hint="Şifre"/>
 
+           <CheckBox
+               android:gravity="center"
+               android:layout_gravity="center"
+               android:id="@+id/rememberMe"
+               android:layout_width="150dp"
+               android:layout_height="wrap_content"
+               android:text="Beni Hatırla" />
+
            <Button
                android:layout_marginTop="20dp"
                android:layout_gravity="center"
-               android:id="@+id/button"
+               android:id="@+id/loginButton"
                android:layout_width="150dp"
                android:layout_height="wrap_content"
                android:background="@drawable/buttonlogin"

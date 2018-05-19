@@ -6,11 +6,11 @@ import android.widget.TextView;
 import com.mobil.gtu.gtumobil.R;
 import com.thoughtbot.expandablerecyclerview.viewholders.GroupViewHolder;
 
-public class ParentViewHolder extends GroupViewHolder {
+public class UlasimParentViewHolder extends GroupViewHolder {
 
     private TextView genreTitle;
 
-    public ParentViewHolder(View itemView) {
+    public UlasimParentViewHolder(View itemView) {
         super(itemView);
         genreTitle = (TextView) itemView.findViewById(R.id.parentTitle);
     }

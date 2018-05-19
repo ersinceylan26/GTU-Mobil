@@ -62,7 +62,6 @@ public class Veritabani extends SQLiteOpenHelper {
         db.close();
     }
 
-
     public List<MenuClass> VeriListele(){
         List<String> veriler = new ArrayList<String>();
         List<MenuClass> veriler2 = new ArrayList<MenuClass>();

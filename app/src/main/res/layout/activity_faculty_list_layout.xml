@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
+
+    <TextView
+        android:id="@+id/facultyName"
+        android:textColor="@color/gtu_black"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:layout_width="25dp"
+        android:background="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_centerVertical="true"
+        android:layout_height="25dp" />
+
+
+
+</RelativeLayout>

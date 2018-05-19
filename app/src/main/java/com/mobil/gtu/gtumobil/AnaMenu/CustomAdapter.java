@@ -28,7 +28,6 @@ public class CustomAdapter extends BaseAdapter
     {
         this.activity=activity;
         this.users=users;
-
         inflater = activity.getLayoutInflater();
     }
 
@@ -64,7 +63,8 @@ public class CustomAdapter extends BaseAdapter
             convertView.setTag(holder);
         }
         else
-            holder = (ViewHolder) convertView.getTag();
+
+        holder = (ViewHolder) convertView.getTag();
 
         MenuClass model = users.get(position);
 

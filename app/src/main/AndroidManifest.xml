@@ -25,7 +25,7 @@
         <activity android:name=".Login.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
 
-        <activity android:name=".Ulasim.UlasimTasarim"
+        <activity android:name=".Ulasim.UlasimActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity android:name=".Etkinlik.EtkinlikMainActivity"
@@ -48,6 +48,13 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Haberler.NewContentActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".BolumDuyurlari.FacultyAcitivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".BolumDuyurlari.DepartmentAcitivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".BolumDuyurlari.AnnouncementListActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".BolumDuyurlari.ContentActivity" />
 
 
     </application>

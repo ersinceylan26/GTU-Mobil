@@ -1,19 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:background="@color/arkaplan"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/aaa">
+
+        <ImageView
+            android:layout_marginRight="10dp"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/iiicon" />
+
+        <TextView
+            android:id="@+id/Title"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Otobüs Saatleri"
+            android:textSize="15dp"
+            android:fontFamily="Roboto regular"
+            android:textColor="@color/gtu_blue" />
+
+    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/myRecyclerView"
+        android:layout_margin="16dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     </android.support.v7.widget.RecyclerView>
 
     <ProgressBar
-        android:id="@+id/progressBar1"
+        android:id="@+id/ulasimProgressBar"
         style="?android:attr/process"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,4 +50,4 @@
         android:layout_marginTop="198dp" />
 
 
-</RelativeLayout>
+</LinearLayout>

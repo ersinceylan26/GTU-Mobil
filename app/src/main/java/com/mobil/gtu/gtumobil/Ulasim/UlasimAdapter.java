@@ -14,7 +14,7 @@ import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 import java.util.List;
 import java.util.Random;
 
-public class UlasimAdapter extends ExpandableRecyclerViewAdapter<ParentViewHolder,ChilddViewHolder>
+public class UlasimAdapter extends ExpandableRecyclerViewAdapter<UlasimParentViewHolder,UlasimChildViewHolder>
 {
     private Context mContext;
 
@@ -24,24 +24,24 @@ public class UlasimAdapter extends ExpandableRecyclerViewAdapter<ParentViewHolde
     }
 
     @Override
-    public ParentViewHolder onCreateGroupViewHolder(ViewGroup parent, int viewType) {
+    public UlasimParentViewHolder onCreateGroupViewHolder(ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_ulasim_list_parent,parent,false);
 
-        return new ParentViewHolder(view);
+        return new UlasimParentViewHolder(view);
     }
 
     @Override
-    public ChilddViewHolder onCreateChildViewHolder(ViewGroup parent, int viewType) {
+    public UlasimChildViewHolder onCreateChildViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_ulasim_list_child,parent,false);
 
-        return new ChilddViewHolder(view);
+        return new UlasimChildViewHolder(view);
     }
 
     @Override
-    public void onBindChildViewHolder(ChilddViewHolder holder, int flatPosition, ExpandableGroup group, int childIndex) {
+    public void onBindChildViewHolder(UlasimChildViewHolder holder, int flatPosition, ExpandableGroup group, int childIndex) {
 
-        Child child = (Child) group.getItems().get(childIndex);
+        UlasimChild child = (UlasimChild) group.getItems().get(childIndex);
 
         holder.setArtistname(child.getName());
         setAnimation(holder.itemView, flatPosition);
@@ -49,7 +49,7 @@ public class UlasimAdapter extends ExpandableRecyclerViewAdapter<ParentViewHolde
     }
 
     @Override
-    public void onBindGroupViewHolder(ParentViewHolder holder, int flatPosition, ExpandableGroup group) {
+    public void onBindGroupViewHolder(UlasimParentViewHolder holder, int flatPosition, ExpandableGroup group) {
 
         holder.setGenreName(group.getTitle());
     }

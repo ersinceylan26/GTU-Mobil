@@ -1,4 +1,4 @@
-package com.mobil.gtu.gtumobil.Haberler;
+package com.mobil.gtu.gtumobil.BolumDuyurlari;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -19,7 +19,7 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
-public class NewContentActivity extends AppCompatActivity
+public class Bolumcontent extends AppCompatActivity
 {
     private ProgressDialog progressDialog;
     private WebView webviev;

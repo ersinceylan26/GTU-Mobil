@@ -4,13 +4,13 @@
 
     <!-- View background color -->
     <solid
-        android:color="@color/gtu_white" >
+        android:color="@color/arkaplan" >
     </solid>
 
     <!-- View border color and width -->
     <stroke
-        android:width="0.8dp"
-        android:color="@color/gtu_black" >
+        android:width="1dp"
+        android:color="@color/gtu_blue" >
     </stroke>
 
     <!-- The radius makes the corners rounded -->

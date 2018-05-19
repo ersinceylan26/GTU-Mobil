@@ -77,7 +77,6 @@ public class MenuActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
-
                 Veritabani vt = new Veritabani(MenuActivity.this);
                 ArrayList value = new ArrayList();
 

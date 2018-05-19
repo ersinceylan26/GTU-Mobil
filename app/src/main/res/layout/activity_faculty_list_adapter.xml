@@ -26,31 +26,19 @@
             android:id="@+id/Title"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Ana Menü Düzenleme"
+            android:text="Fakülteler"
             android:textSize="15dp"
             android:fontFamily="Roboto regular"
             android:textColor="@color/gtu_blue" />
 
     </LinearLayout>
 
-    <Button
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:id="@+id/shortWaySaveButton"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/buttonlogin"
-        android:text="KAYDET"
-        android:textColor="#fff"/>
-
     <ListView
         android:layout_margin="16dp"
         android:background="@color/arkaplan"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/menuListView">
-
+        android:id="@+id/facultyListView">
     </ListView>
 
 

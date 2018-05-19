@@ -6,8 +6,10 @@ import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 
 import com.mobil.gtu.gtumobil.R;
 
@@ -20,17 +22,19 @@ import java.io.IOException;
 
 public class NewsListActivity extends AppCompatActivity
 {
-    private ProgressDialog progressDialog;
-    private WebView wbNewList;
+
     private String newsListUrl="";
-    private String url17B="";
+    private WebView wbNewList;
     String data="";
-    
+    ProgressBar pb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_news_list_layout);
+
+        pb = findViewById(R.id.newsListProgressBar);
 
         wbNewList = findViewById(R.id.wb);
         newsListUrl="http://www.gtu.edu.tr/kategori/8/0/display.aspx?languageId=1";
@@ -60,6 +64,7 @@ public class NewsListActivity extends AppCompatActivity
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             wbNewList.loadDataWithBaseURL(null,data,"text/html","UTF-8",null);
+            pb.setVisibility(View.GONE);
         }
 
         @Override

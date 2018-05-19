@@ -1,10 +1,10 @@
 package com.mobil.gtu.gtumobil.Ulasim;
 
-public class Child
+public class UlasimChild
 {
     String name;
 
-    public Child(String name) {
+    public UlasimChild(String name) {
         this.name = name;
     }
 
