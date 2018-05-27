@@ -8,6 +8,32 @@
     android:orientation="vertical">
 
 
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/aaa">
+
+        <ImageView
+            android:layout_marginRight="10dp"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/iiicon" />
+
+        <TextView
+            android:id="@+id/Title"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Bakiye Sorgulama"
+            android:textSize="15dp"
+            android:fontFamily="Roboto regular"
+            android:textColor="@color/gtu_blue" />
+
+    </LinearLayout>
 
     <WebView
         android:background="@color/sitearkaplan"
@@ -15,14 +41,14 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
-        android:id="@+id/wbBolumDuyuruContent"
+        android:id="@+id/wbBalance"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     </WebView>
 
     <ProgressBar
-        android:id="@+id/bolumDuyuruContentProgressBar"
+        android:id="@+id/balanceContentProgressBar"
         style="?android:attr/process"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

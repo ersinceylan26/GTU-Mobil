@@ -33,9 +33,56 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_weight="3"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:id="@+id/loginButton11"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:background="@drawable/buttonlogin"
+            android:text="490"
+            android:textColor="#fff"/>
+
+        <Button
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:id="@+id/loginButton22"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:background="@drawable/buttonlogin"
+            android:text="17B"
+            android:textColor="#fff"/>
+
+        <Button
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:id="@+id/loginButton33"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:background="@drawable/buttonlogin"
+            android:text="RİNG"
+            android:textColor="#fff"/>
+
+    </LinearLayout>
+
     <android.support.v7.widget.RecyclerView
+        android:layout_weight="1"
         android:id="@+id/myRecyclerView"
-        android:layout_margin="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

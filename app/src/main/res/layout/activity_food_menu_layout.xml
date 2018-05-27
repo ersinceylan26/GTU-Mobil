@@ -28,34 +28,13 @@
             android:id="@+id/Title"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Akademik Takvim"
+            android:text="Yemekhane Menü"
             android:textSize="15dp"
             android:fontFamily="Roboto regular"
             android:textColor="@color/gtu_blue" />
 
     </LinearLayout>
 
-    <WebView
-        android:background="@color/sitearkaplan"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
 
-        android:id="@+id/wbNewContent"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </WebView>
-
-    <ProgressBar
-        android:id="@+id/newContentProgressBar"
-        style="?android:attr/process"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="214dp"
-        tools:ignore="MissingConstraints" />
 
 </LinearLayout>

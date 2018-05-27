@@ -66,7 +66,7 @@ public class DepartmentAcitivity extends AppCompatActivity
 
                 DepartmentClass model = users.get(position);
 
-                Intent intent = new Intent(DepartmentAcitivity.this, AnnouncementListActivity.class);
+                Intent intent = new Intent(DepartmentAcitivity.this, DepartmentAnnouncementListActivity.class);
                 intent.putExtra("facultyNumber",String.valueOf(number));
                 intent.putExtra("departmentNumber",String.valueOf(position));
                 startActivity(intent);

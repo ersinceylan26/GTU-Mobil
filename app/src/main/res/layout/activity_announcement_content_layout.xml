@@ -15,14 +15,15 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
-        android:id="@+id/wbBolumDuyuruContent"
+
+        android:id="@+id/wbAnnouncementContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     </WebView>
 
     <ProgressBar
-        android:id="@+id/bolumDuyuruContentProgressBar"
+        android:id="@+id/announcementContentProgressBar"
         style="?android:attr/process"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -1,6 +1,5 @@
 package com.mobil.gtu.gtumobil.Login;
 
-import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,16 +14,31 @@ import android.widget.TextView;
 import com.mobil.gtu.gtumobil.R;
 
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 
+import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
+import java.io.UnsupportedEncodingException;
 
-import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
+import static java.lang.Thread.sleep;
 
 /**
  * Created by ersin on 4.03.2018.
@@ -32,10 +46,11 @@ import java.net.URL;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText editTextPass,editTextMail;
+    EditText editTextPass, editTextMail;
     CheckBox rememberMe;
     TextView errorCase;
     Button loginButton;
+    private String url = "";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,14 +64,14 @@ public class LoginActivity extends AppCompatActivity {
 
         final User user;
         final LoginDatabase vt = new LoginDatabase(LoginActivity.this);
+        url = "http://login.apollo.gtu.edu.tr/tr/Login?return=http%3a%2f%2flogin.apollo.gtu.edu.tr%2f";
         errorCase.setVisibility(View.GONE);
 
         //vt.deleteData();
 
         user = vt.fetchData();
 
-        if(user.getName().compareTo("null")!=0 || user.getPassword().compareTo("null")!=0 )
-        {
+        if (user.getName().compareTo("null") != 0 || user.getPassword().compareTo("null") != 0) {
             editTextMail.setText(user.getName());
             editTextPass.setText(user.getPassword());
             editTextMail.setFocusable(false);
@@ -65,9 +80,7 @@ public class LoginActivity extends AppCompatActivity {
             editTextPass.setEnabled(false);
 
             rememberMe.setChecked(true);
-        }
-        else
-        {
+        } else {
 
             /*ProgressDialog progress;
 
@@ -86,39 +99,28 @@ public class LoginActivity extends AppCompatActivity {
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                if(editTextPass.getText().toString().matches("") ||
-                        editTextMail.getText().toString().matches(""))
-                {
+            public void onClick(View v) {
+                if (editTextPass.getText().toString().matches("") ||
+                        editTextMail.getText().toString().matches("")) {
                     Log.w("orospu", user.getName() + user.getPassword());
                     errorCase.setText("* Tüm Alanları Doldurunuz");
                     errorCase.setVisibility(View.VISIBLE);
-                }
-                else
-                {
+                } else {
                     user.setName(editTextMail.getText().toString());
                     user.setPassword(editTextPass.getText().toString());
 
                     Log.w("asda", user.getName() + user.getPassword());
 
                     CheckBox rememberMe = findViewById(R.id.rememberMe);
-                    if(rememberMe.isChecked())
-                    {
+                    if (rememberMe.isChecked()) {
                         Log.w("errorgeldi", user.getName() + user.getPassword());
-                        vt.addData(editTextMail.getText().toString(),editTextPass.getText().toString());
-                    }
-                    else
-                    {
+                        vt.addData(editTextMail.getText().toString(), editTextPass.getText().toString());
+                    } else {
                         vt.deleteData();
                     }
 
 
                 }
-
-
-
-
 
 
             }
@@ -127,8 +129,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-
-    public class fetchNewsList extends AsyncTask<Void,Void,Void> {
+    public class fetchNewsList extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected void onPostExecute(Void aVoid) {
@@ -138,58 +139,72 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... voids) {
 
-            URL website = null;
             try {
-                website = new URL("http://login.apollo.gtu.edu.tr/tr/Login?return=http%3a%2f%2flogin.apollo.gtu.edu.tr%2f");
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
+                Document document = Jsoup.connect(url).get();
+                StringBuilder sb = new StringBuilder();
+                HttpClient client = new DefaultHttpClient();
 
-            HttpURLConnection conn = null;
-            try {
-                conn = (HttpURLConnection) website.openConnection();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            conn.setReadTimeout(5000);
-            conn.setConnectTimeout(2000);
-            try {
-                conn.setRequestMethod("GET");
-            } catch (ProtocolException e) {
-                e.printStackTrace();
-            }
-            conn.setDoInput(true);
-            // Starts the query
-            try {
-                conn.connect();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+                HttpGet request = new HttpGet("http://login.apollo.gtu.edu.tr/tr/Login?return=http%3a%2f%2flogin.apollo.gtu.edu.tr%2f");
+                HttpResponse response2= client.execute(request);
+                HttpEntity entity2 = response2.getEntity();
+                InputStream in = entity2.getContent();
 
-            try {
-                conn.getInputStream();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            try {
-                BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                StringBuilder result = new StringBuilder();
-                String line;
-                while((line = reader.readLine()) != null) {
-                    result.append(line);
+
+                BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+                String line = "";
+                int count =0;
+                while((line = reader.readLine()) != null){
+                    Log.d("ersoooo", line);
+                    Log.d("countttt", Integer.toString(count));
+                    count++;
+
+                    if(count==97)
+                        break;
+
                 }
+                Log.d("benburdayim", Integer.toString(count));
+                Log.d("benburdayim", line);
 
-                Log.w("ersooo", result.toString());
+
+                Document document1 = new Document(line);
+                Log.d("nabiyonla", line);
+                Log.d("taha", "+"+line.substring(69,line.length()-4)+"+");
+
+
+                HttpClient httpclient = new DefaultHttpClient();
+                HttpPost httppost = new HttpPost("http://login.apollo.gtu.edu.tr/tr/Login?return=http%3a%2f%2flogin.apollo.gtu.edu.tr%2f");
+
+                List<NameValuePair> nameValuePair = new ArrayList<>();
+
+                nameValuePair.add(new BasicNameValuePair("UserName", "ersinceylan"));
+                nameValuePair.add(new BasicNameValuePair("Password", "5014551"));
+                nameValuePair.add(new BasicNameValuePair("__RequestVerificationToken", line.substring(69,line.length()-4)));
+
+                //httppost.setHeader(HTTP.CONTENT_TYPE, "application/x-www-form-urlencoded");
+
+                httppost.setEntity(new UrlEncodedFormEntity(nameValuePair));
+
+                HttpResponse response= httpclient.execute(httppost);
+                HttpEntity entity = response.getEntity();
+                final String responseText1 = EntityUtils.toString(entity);
+                Log.d("Response Metni: ", responseText1);
+
+                return null;
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (ClientProtocolException e) {
+                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
 
             return null;
         }
-
     }
 
-
-
 }
+
+
+
+
+

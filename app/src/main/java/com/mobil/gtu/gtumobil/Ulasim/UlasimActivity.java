@@ -1,5 +1,6 @@
 package com.mobil.gtu.gtumobil.Ulasim;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,16 +9,17 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 
-import com.mobil.gtu.gtumobil.OneRowUlasim;
+import com.mobil.gtu.gtumobil.BolumDuyurlari.DepartmentAcitivity;
+import com.mobil.gtu.gtumobil.BolumDuyurlari.DepartmentAnnouncementListActivity;
 import com.mobil.gtu.gtumobil.R;
-
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +37,9 @@ public class UlasimActivity extends AppCompatActivity
     List<UlasimParent> parents;
     Elements element17B;
     ProgressBar pb;
+    String data="";
+    ImageButton expandSearch;
+    Button a1,a2,a3;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState){
@@ -45,6 +50,8 @@ public class UlasimActivity extends AppCompatActivity
         url17B="http://www.iett.istanbul/tr/main/duraklar/212091/BAYRAMO%C4%9ELU-%C4%B0ETT-Duraktan-Ge%C3%A7en-Hatlar-Durak-Bilgileri-Hatt%C4%B1n-Duraktan-Ge%C3%A7i%C5%9F-Saatleri#StaionLiveData";
         pb = findViewById(R.id.ulasimProgressBar);
         recyclerView = (RecyclerView) findViewById(R.id.myRecyclerView);
+        expandSearch = findViewById(R.id.expandSearch);
+
 
         recyclerView.animate()
                 .translationY(0)
@@ -52,6 +59,23 @@ public class UlasimActivity extends AppCompatActivity
                 .setStartDelay(300);
 
         new veriCek().execute();
+
+        a1 = findViewById(R.id.loginButton11);
+        a2 = findViewById(R.id.loginButton22);
+        a3 = findViewById(R.id.loginButton33);
+
+        a1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(UlasimActivity.this, TableAcitivity.class);
+                intent.putExtra("number",String.valueOf("0"));
+                startActivity(intent);
+
+            }
+        });
+
+
 
         }
 
@@ -109,6 +133,7 @@ public class UlasimActivity extends AppCompatActivity
             recyclerView.setAdapter(ulasimAdapter);
 
             pb.setVisibility(View.GONE);
+
         }
 
         @Override
@@ -117,21 +142,24 @@ public class UlasimActivity extends AppCompatActivity
             try {
                 Document document490 = Jsoup.connect(url490).get();
                 Elements element490 = document490.select("div.col-md-6.col");
+                Element style = document490.head();
+                Elements content_H2 = element490.select("table");
+                Elements content_H22 = element490.select("tbody");
+
+
+
+                data+=style;
+                data+=content_H22.get(2).outerHtml();
+                Log.d("ersoceylan", data);
+
+                Document document4902 = Jsoup.connect(url490).get();
 
                 Document document17B = Jsoup.connect(url17B).get();
                 element17B = document17B.select("td.td_LineEstimated");
 
                 String info = element490.get(2).text().toString();
 
-                Log.d("rrr", info);
-
                 String[] infows = info.split(" ");
-
-                Log.d("ttttt", String.valueOf(infows.length));
-                for(String a : infows)
-                {
-                    Log.d("ttttt", a);
-                }
 
                 ArrayList<OneRowUlasim> allInfo = new ArrayList<>();
 

@@ -6,11 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
+import android.widget.ImageButton;
 
 import com.mobil.gtu.gtumobil.R;
 import com.thoughtbot.expandablerecyclerview.ExpandableRecyclerViewAdapter;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
-
 import java.util.List;
 import java.util.Random;
 
@@ -28,6 +28,7 @@ public class UlasimAdapter extends ExpandableRecyclerViewAdapter<UlasimParentVie
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_ulasim_list_parent,parent,false);
 
+        ImageButton ASDA = view.findViewById(R.id.expandSearch);
         return new UlasimParentViewHolder(view);
     }
 

@@ -20,7 +20,7 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
-public class AnnouncementListActivity extends AppCompatActivity
+public class DepartmentAnnouncementListActivity extends AppCompatActivity
 {
 
     private String newsListUrl="";
@@ -32,9 +32,9 @@ public class AnnouncementListActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_news_list_layout);
+        setContentView(R.layout.activity_departments_list_layout);
 
-        pb = findViewById(R.id.newsListProgressBar);
+        pb = findViewById(R.id.departmentsAnnouListProgressBar);
 
 
         Intent intent = this.getIntent();
@@ -125,7 +125,7 @@ public class AnnouncementListActivity extends AppCompatActivity
         }
 
 
-        wbNewList = findViewById(R.id.wb);
+        wbNewList = findViewById(R.id.wbDepartmentsAnnouncment);
         wbNewList.getSettings().setJavaScriptEnabled(true);
         wbNewList.getSettings().setDefaultTextEncodingName("utf-8");
         wbNewList.setBackgroundColor(Color.TRANSPARENT);

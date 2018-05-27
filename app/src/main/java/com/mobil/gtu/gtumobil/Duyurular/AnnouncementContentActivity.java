@@ -1,4 +1,4 @@
-package com.mobil.gtu.gtumobil.BolumDuyurlari;
+package com.mobil.gtu.gtumobil.Duyurular;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -19,7 +19,7 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
-public class ContentActivity extends AppCompatActivity
+public class AnnouncementContentActivity extends AppCompatActivity
 {
     private ProgressDialog progressDialog;
     private WebView webviev;
@@ -29,11 +29,11 @@ public class ContentActivity extends AppCompatActivity
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_duyuru_content_layout);
+        setContentView(R.layout.activity_announcement_content_layout);
 
-        pb = findViewById(R.id.bolumDuyuruContentProgressBar);
+        pb = findViewById(R.id.announcementContentProgressBar);
 
-        webviev = (WebView) findViewById(R.id.wbBolumDuyuruContent);
+        webviev = (WebView) findViewById(R.id.wbAnnouncementContent);
         webviev.getSettings().setJavaScriptEnabled(true);
         webviev.getSettings().setDefaultTextEncodingName("utf-8");
         webviev.setBackgroundColor(Color.TRANSPARENT);

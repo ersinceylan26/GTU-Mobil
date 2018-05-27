@@ -16,7 +16,8 @@ import com.mobil.gtu.gtumobil.R;
 
 public class AnaMenuSortWayListActiviy extends AppCompatActivity
 {
-    String[] activities = {"Ulasim","Haberler","Rehber","Duyurular","Etkinlikler","Transkript","YemekBakiye"};
+    String[] activities = {"Ulasim","Haberler","Rehber","Etkinlikler","Transkript","YemekBakiye","BolumDuyurulari",
+            "YemekMenusu","Duyurular","AkademikTakvim","Login","Hakkimizda"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

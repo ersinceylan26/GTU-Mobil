@@ -14,7 +14,7 @@
             <padding
                 android:bottom="2dp" />
 
-            <corners android:radius="100dp" />
+            <corners android:radius="200dp" />
         </shape>
     </item>
 
@@ -23,7 +23,7 @@
     <item>
         <shape>
             <solid android:color="@color/gtu_white" />
-            <corners android:radius="200dp" />
+            <corners android:radius="400dp" />
         </shape>
     </item>
 

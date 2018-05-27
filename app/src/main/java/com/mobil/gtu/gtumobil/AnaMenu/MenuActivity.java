@@ -90,7 +90,14 @@ public class MenuActivity extends AppCompatActivity
                         String.valueOf(value.get(1)),
                         String.valueOf(value.get(2)),
                         String.valueOf(value.get(3)),
-                        String.valueOf(value.get(4)));
+                        String.valueOf(value.get(4)),
+                        String.valueOf(value.get(5)),
+                        String.valueOf(value.get(6)),
+                        String.valueOf(value.get(7)),
+                        String.valueOf(value.get(8)),
+                        String.valueOf(value.get(9)),
+                        String.valueOf(value.get(10)),
+                        String.valueOf(value.get(11)));
 
                 for(int k =0;k<1;k++)
                 {

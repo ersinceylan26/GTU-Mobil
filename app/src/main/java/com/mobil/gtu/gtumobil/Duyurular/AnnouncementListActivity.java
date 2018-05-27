@@ -1,6 +1,5 @@
-package com.mobil.gtu.gtumobil.Haberler;
+package com.mobil.gtu.gtumobil.Duyurular;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
@@ -11,16 +10,17 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
+import com.mobil.gtu.gtumobil.Haberler.NewContentActivity;
 import com.mobil.gtu.gtumobil.R;
 
 import org.jsoup.Jsoup;
-import org.jsoup.select.Elements;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
-public class NewsListActivity extends AppCompatActivity
+public class AnnouncementListActivity extends AppCompatActivity
 {
 
     private String newsListUrl="";
@@ -46,7 +46,7 @@ public class NewsListActivity extends AppCompatActivity
 
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                Intent myIntent = new Intent(getBaseContext(), NewContentActivity.class);
+                Intent myIntent = new Intent(getBaseContext(), AnnouncementContentActivity.class);
                 myIntent.putExtra("nameUrl", url);
                 startActivity(myIntent);
                 return true;
@@ -80,7 +80,7 @@ public class NewsListActivity extends AppCompatActivity
                 data+=style;
                 data+="<ul>";
 
-                for(int i = 0; hhh.size()> i && i < 20; i++) {
+                for(int i = 0; i < 20; i++) {
                     data += hhh.get(i).toString();
                     data+="<br>";
                 }

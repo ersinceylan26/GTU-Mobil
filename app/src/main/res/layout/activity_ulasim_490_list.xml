@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@color/arkaplan">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/aaa">
+
+        <ImageView
+            android:layout_marginRight="10dp"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/iiicon" />
+
+        <TextView
+            android:id="@+id/Title"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="490 Saat Listesi"
+            android:textSize="15dp"
+            android:fontFamily="Roboto regular"
+            android:textColor="@color/gtu_blue" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_weight="1"
+                android:textColor="@color/gtu_red"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="GTÜ - > KYK"/>
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_weight="1"
+                android:textColor="@color/gtu_red"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="KYK - > GTÜ"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="8dp"
+                android:layout_weight="1"
+                android:textColor="@color/gtu_black"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Hafta İçi"/>
+
+            <TextView
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="8dp"
+                android:textColor="@color/gtu_black"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Cumartesi"/>
+
+            <TextView
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="8dp"
+                android:textColor="@color/gtu_black"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Pazar"/>
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="8dp"
+                android:layout_weight="1"
+                android:textColor="@color/gtu_black"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Hafta İçi"/>
+
+            <TextView
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="8dp"
+                android:textColor="@color/gtu_black"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Cumartesi"/>
+
+            <TextView
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="8dp"
+                android:textColor="@color/gtu_black"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Pazar"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="match_parent">
+
+
+        <ListView
+            android:layout_weight="1"
+            android:layout_margin="16dp"
+            android:background="@color/arkaplan"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/list490">
+
+        </ListView>
+
+        <ListView
+            android:layout_weight="1"
+            android:layout_margin="16dp"
+            android:background="@color/arkaplan"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/list4902">
+
+        </ListView>
+
+    </LinearLayout>
+
+</LinearLayout>

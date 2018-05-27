@@ -3,6 +3,10 @@
     package="com.mobil.gtu.gtumobil">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permision.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:largeHeap="true"
@@ -31,7 +35,7 @@
         <activity android:name=".Etkinlik.EtkinlikMainActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
 
-        <activity android:name=".Rehber.RehberActivity"
+        <activity android:name=".Rehber.GuideActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity android:name=".MainActivity"
@@ -44,17 +48,30 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Haberler.NewsListActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Fetch17b"
-            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Haberler.NewContentActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".BolumDuyurlari.FacultyAcitivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".BolumDuyurlari.DepartmentAcitivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".BolumDuyurlari.AnnouncementListActivity"
+        <activity android:name=".BolumDuyurlari.DepartmentAnnouncementListActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".BolumDuyurlari.ContentActivity" />
+        <activity android:name=".Duyurular.AnnouncementListActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Duyurular.AnnouncementContentActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".AcademicCalendar.AcademicCalendarActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Balance.BalanceActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".HarcDurumu.HarcActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".FoodMenu.FoodMenuActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Ulasim.TableAcitivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".DENEME" />
 
 
     </application>

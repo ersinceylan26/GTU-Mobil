@@ -5,11 +5,13 @@ public class Contact
     String name;
     String unvan;
     String tel;
+    String mail;
 
-    public Contact(String name, String unvan, String tel) {
+    public Contact(String name, String unvan, String tel,String mail) {
         this.name = name;
         this.unvan = unvan;
         this.tel = tel;
+        this.mail=mail;
     }
 
     public String getName() {
@@ -34,5 +36,13 @@ public class Contact
 
     public void setTel(String tel) {
         this.tel = tel;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 }

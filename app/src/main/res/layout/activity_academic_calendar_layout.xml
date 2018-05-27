@@ -7,22 +7,20 @@
     android:background="@color/sitearkaplan"
     android:orientation="vertical">
 
-
-
     <WebView
         android:background="@color/sitearkaplan"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
-        android:id="@+id/wbBolumDuyuruContent"
+        android:id="@+id/wbAcademicCalendarContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     </WebView>
 
     <ProgressBar
-        android:id="@+id/bolumDuyuruContentProgressBar"
+        android:id="@+id/academicCalendarContentProgressBar"
         style="?android:attr/process"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

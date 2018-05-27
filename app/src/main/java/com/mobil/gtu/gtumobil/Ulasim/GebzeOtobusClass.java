@@ -1,25 +1,15 @@
-package com.mobil.gtu.gtumobil;
+package com.mobil.gtu.gtumobil.Ulasim;
 
-public class OneRowUlasim
+public class GebzeOtobusClass
 {
-    String index;
     String first;
     String second;
     String third;
 
-    public OneRowUlasim(String index, String first, String second, String third) {
-        this.index = index;
+    public GebzeOtobusClass(String first, String second, String third) {
         this.first = first;
         this.second = second;
         this.third = third;
-    }
-
-    public String getIndex() {
-        return index;
-    }
-
-    public void setIndex(String index) {
-        this.index = index;
     }
 
     public String getFirst() {
@@ -45,6 +35,4 @@ public class OneRowUlasim
     public void setThird(String third) {
         this.third = third;
     }
-
-
 }

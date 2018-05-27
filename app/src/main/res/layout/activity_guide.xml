@@ -40,14 +40,14 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/rehberAramaTxt"
+            android:id="@+id/guideSearchTxt"
             android:textColor="@color/gtu_black"
             android:layout_margin="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/rehberAramaButton"
+            android:id="@+id/guideSearchButton"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -61,10 +61,11 @@
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/arkaplan"
-        android:id="@+id/rehberRecycler">
+        android:id="@+id/guideRecycler">
 
 
 

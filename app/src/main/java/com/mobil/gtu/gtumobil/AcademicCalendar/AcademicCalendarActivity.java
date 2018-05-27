@@ -1,4 +1,4 @@
-package com.mobil.gtu.gtumobil.BolumDuyurlari;
+package com.mobil.gtu.gtumobil.AcademicCalendar;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -19,7 +19,7 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
-public class ContentActivity extends AppCompatActivity
+public class AcademicCalendarActivity extends AppCompatActivity
 {
     private ProgressDialog progressDialog;
     private WebView webviev;
@@ -29,17 +29,16 @@ public class ContentActivity extends AppCompatActivity
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_duyuru_content_layout);
+        setContentView(R.layout.activity_new_content_layout);
 
-        pb = findViewById(R.id.bolumDuyuruContentProgressBar);
+        pb = findViewById(R.id.newContentProgressBar);
 
-        webviev = (WebView) findViewById(R.id.wbBolumDuyuruContent);
+        webviev = (WebView) findViewById(R.id.wbNewContent);
         webviev.getSettings().setJavaScriptEnabled(true);
         webviev.getSettings().setDefaultTextEncodingName("utf-8");
         webviev.setBackgroundColor(Color.TRANSPARENT);
 
-        Intent intent = getIntent();
-        newUrl = intent.getStringExtra("nameUrl");
+        newUrl = "http://www.gtu.edu.tr/icerik/1318/436/akademik-takvim.aspx";
 
         new fetchData().execute();
 
@@ -57,21 +56,17 @@ public class ContentActivity extends AppCompatActivity
         @Override
         protected Void doInBackground(Void... voids) {
 
-
             try {
                 Document newContent = Jsoup.connect(newUrl).get();
-                Element style =newContent.head();
-                Elements content_H2 = newContent.select("h2");
-                Elements content_P = newContent.select("p");
+                Element style = newContent.head();
+                Elements content_P = newContent.select("tr");
 
                 data+=style;
-                data+=content_H2.outerHtml();
                 data+="<br>";
 
                 for(int i=0;i<content_P.size()-1;i++)
                 {
                     data += content_P.get(i).outerHtml();
-                    data+="<br>";
                 }
 
             } catch (IOException e) {

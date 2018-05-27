@@ -3,10 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/arkaplan"
     android:layout_height="match_parent"
-    android:background="@color/sitearkaplan"
     android:orientation="vertical">
-
 
     <LinearLayout
         android:layout_height="wrap_content"
@@ -22,13 +21,13 @@
             android:gravity="center"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:src="@drawable/iiicon" />
+            android:src="@drawable/iicon" />
 
         <TextView
             android:id="@+id/Title"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Akademik Takvim"
+            android:text="Bölüm Duyuruları"
             android:textSize="15dp"
             android:fontFamily="Roboto regular"
             android:textColor="@color/gtu_blue" />
@@ -36,26 +35,21 @@
     </LinearLayout>
 
     <WebView
-        android:background="@color/sitearkaplan"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-
-        android:id="@+id/wbNewContent"
+        android:background="@color/arkaplan"
+        android:layout_margin="20dp"
+        android:id="@+id/wbDepartmentsAnnouncment"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
     </WebView>
 
     <ProgressBar
-        android:id="@+id/newContentProgressBar"
+        android:id="@+id/departmentsAnnouListProgressBar"
         style="?android:attr/process"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="214dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="221dp" />
 
 </LinearLayout>
