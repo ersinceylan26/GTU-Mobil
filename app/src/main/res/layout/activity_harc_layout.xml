@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/aaa">
+
+        <ImageView
+            android:layout_marginRight="10dp"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/iiicon" />
+
+        <TextView
+
+            android:id="@+id/Title"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Harç Durumu"
+            android:textSize="15dp"
+            android:fontFamily="Roboto regular"
+            android:textColor="@color/gtu_blue" />
+
+    </LinearLayout>
+
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/harcProgressBar" />
+
+
+    <LinearLayout
+        android:padding="20dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/harcId"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="Öğrenci ID:"
+            android:textColor="@color/gtu_black" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/harcId2"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text=""
+            android:textColor="@color/gtu_black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:id="@+id/harcMiktari"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="H.Miktarı:"
+            android:textColor="@color/gtu_black" />
+
+        <TextView
+            android:id="@+id/harcMiktari2"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text=""
+            android:textColor="@color/gtu_black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:id="@+id/hardOdenen"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="Odenen"
+            android:textColor="@color/gtu_black" />
+
+        <TextView
+            android:id="@+id/hardOdenen2"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text=""
+            android:textColor="@color/gtu_black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:id="@+id/harcKalan"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="Kalan"
+            android:textColor="@color/gtu_black" />
+
+        <TextView
+            android:id="@+id/harcKalan2"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text=""
+            android:textColor="@color/gtu_black" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:padding="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/harcIade"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="İade"
+            android:textColor="@color/gtu_black" />
+
+        <TextView
+            android:id="@+id/harcIade2"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text=""
+            android:textColor="@color/gtu_black" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

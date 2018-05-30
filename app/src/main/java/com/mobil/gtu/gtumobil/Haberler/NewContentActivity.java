@@ -1,32 +1,34 @@
 package com.mobil.gtu.gtumobil.Haberler;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.webkit.WebView;
-
+import android.widget.ProgressBar;
 import com.mobil.gtu.gtumobil.R;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
 import java.io.IOException;
 
 public class NewContentActivity extends AppCompatActivity
 {
-    private ProgressDialog progressDialog;
     private WebView webviev;
     private String newUrl="";
     String data="";
+    ProgressBar progressBar;
 
+    @SuppressLint("SetJavaScriptEnabled")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_content_layout);
+        progressBar = findViewById(R.id.newContentProgressBar);
 
         webviev = (WebView) findViewById(R.id.wbNewContent);
         webviev.getSettings().setJavaScriptEnabled(true);
@@ -36,8 +38,8 @@ public class NewContentActivity extends AppCompatActivity
         Intent intent = getIntent();
         newUrl = intent.getStringExtra("nameUrl");
 
+        progressBar.setVisibility(View.VISIBLE);
         new fetchData().execute();
-
     }
 
     public class fetchData extends AsyncTask<Void,Void,Void> {
@@ -46,11 +48,11 @@ public class NewContentActivity extends AppCompatActivity
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             webviev.loadDataWithBaseURL(null,data,"text/html","UTF-8",null);
+            progressBar.setVisibility(View.GONE);
         }
 
         @Override
         protected Void doInBackground(Void... voids) {
-
 
             try {
                 Document newContent = Jsoup.connect(newUrl).get();

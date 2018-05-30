@@ -1,356 +1,573 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="@color/arkaplan"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
-    tools:showIn="@layout/app_bar_main"
     android:orientation="vertical">
 
     <ScrollView
+        android:layout_margin="20dp"
+        android:background="@color/arkaplan"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
+
+
+        <android.support.v7.widget.CardView
+            android:layout_alignParentLeft="true"
+            android:id="@+id/ulasim"
+            android:dividerHeight="0.0px"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            app:cardCornerRadius="20dp"
+            card_view:cardElevation="10dp"
+            card_view:cardPreventCornerOverlap="false"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1">
 
             <LinearLayout
                 android:background="@color/gtu_white"
-                android:clipToPadding="false"
-                android:gravity="center"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
 
-                <android.support.v7.widget.CardView
-                    android:id="@+id/ulasim"
-                    android:dividerHeight="0.0px"
-                    android:clipToPadding="false"
-                    android:clipChildren="false"
-                    card_view:cardElevation="10dp"
-                    card_view:cardPreventCornerOverlap="false"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:layout_width="160dp"
-                    android:layout_height="110dp"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/icon_ulasim"
+                    android:padding="8dp"/>
 
-                    <LinearLayout
-                        android:background="@color/gtu_white"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:src="@drawable/icon_ulasim"
-                            android:padding="10dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textStyle="bold"
-                            android:textSize="10dp"
-                            android:textColor="@color/gtu_yellow"
-                            android:layout_marginTop="10dp"
-                            android:text="Ulaşım" />
-
-                    </LinearLayout>
-
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:dividerHeight="0.0px"
-                    android:clipToPadding="false"
-                    android:clipChildren="false"
-                    card_view:cardElevation="10dp"
-                    card_view:cardPreventCornerOverlap="false"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:id="@+id/haberler"
-                    android:layout_width="160dp"
-                    android:layout_height="110dp"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:src="@drawable/icon_news"
-                            android:padding="10dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textStyle="bold"
-                            android:textColor="@color/gtu_blue"
-                            android:textSize="10dp"
-                            android:layout_marginTop="10dp"
-                            android:text="Haberler" />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-
-                <android.support.v7.widget.CardView
-                    android:dividerHeight="0.0px"
-                    android:clipToPadding="false"
-                    android:clipChildren="false"
-                    card_view:cardElevation="10dp"
-                    card_view:cardPreventCornerOverlap="false"
-                    android:id="@+id/aciltelefonlar"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:layout_width="160dp"
-                    android:layout_height="110dp"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:src="@drawable/icon_guide"
-                            android:padding="10dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textStyle="bold"
-                            android:textColor="@color/gtu_red"
-                            android:textSize="10dp"
-                            android:layout_marginTop="10dp"
-                            android:text="Rehber" />
-
-                    </LinearLayout>
-
-
-                </android.support.v7.widget.CardView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="10dp"
+                    android:textColor="@color/gtu_yellow"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Ulaşım" />
 
             </LinearLayout>
 
 
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+
+            android:dividerHeight="0.0px"
+            android:clipToPadding="false"
+            app:cardCornerRadius="20dp"
+            android:clipChildren="false"
+            card_view:cardElevation="10dp"
+            card_view:cardPreventCornerOverlap="false"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:id="@+id/haberler"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1">
 
             <LinearLayout
-                android:clipToPadding="false"
-                android:gravity="center"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
 
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/icon_news"
+                    android:padding="8dp"/>
 
-                <android.support.v7.widget.CardView
-                    android:dividerHeight="0.0px"
-                    android:clipToPadding="false"
-                    android:clipChildren="false"
-                    card_view:cardElevation="10dp"
-                    card_view:cardPreventCornerOverlap="false"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:layout_width="160dp"
-                    android:layout_height="110dp"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    android:id="@+id/etkinlikler">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:src="@drawable/icon_events"
-                            android:padding="10dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textStyle="bold"
-                            android:textSize="10dp"
-                            android:layout_marginTop="10dp"
-                            android:text="Etkinlikler" />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-
-
-                <android.support.v7.widget.CardView
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:layout_width="160dp"
-                    android:elevation="8dp"
-                    android:divider="@android:color/transparent"
-                    android:dividerHeight="0.0px"
-                    android:clipToPadding="false"
-                    android:clipChildren="false"
-                    card_view:cardElevation="10dp"
-                    card_view:cardPreventCornerOverlap="false"
-                    android:layout_height="110dp"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    android:id="@+id/transkript">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:src="@drawable/icon_transkript"
-                            android:padding="10dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textStyle="bold"
-                            android:textSize="10dp"
-                            android:layout_marginTop="10dp"
-                            android:text="Transkript" />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-
-                <android.support.v7.widget.CardView
-                    android:dividerHeight="0.0px"
-                    android:clipToPadding="false"
-                    android:clipChildren="false"
-                    card_view:cardElevation="10dp"
-                    card_view:cardPreventCornerOverlap="false"
-                    android:layout_width="160dp"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:layout_height="110dp"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    android:id="@+id/transkript3">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:src="@drawable/icon_wallet"
-                            android:padding="10dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textStyle="bold"
-                            android:textSize="10dp"
-                            android:layout_marginTop="10dp"
-                            android:text="Yemek Bakiye" />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/gtu_blue"
+                    android:textSize="10dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="3dp"
+                    android:text="Haberler" />
 
             </LinearLayout>
 
+        </android.support.v7.widget.CardView>
 
-            <LinearLayout
+            <android.support.v7.widget.CardView
+
+                android:dividerHeight="0.0px"
                 android:clipToPadding="false"
-                android:gravity="center"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                app:cardCornerRadius="20dp"
+                android:clipChildren="false"
+                card_view:cardElevation="10dp"
+                card_view:cardPreventCornerOverlap="false"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:id="@+id/aciltelefonlar"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/icon_guide"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@color/gtu_red"
+                        android:textSize="10dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginTop="3dp"
+                        android:text="Rehber" />
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
 
 
 
-
-            </LinearLayout>
-
-            <LinearLayout
+            <android.support.v7.widget.CardView
+                android:dividerHeight="0.0px"
                 android:clipToPadding="false"
-                android:gravity="center"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:clipChildren="false"
+                card_view:cardElevation="10dp"
+                app:cardCornerRadius="20dp"
+                card_view:cardPreventCornerOverlap="false"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:id="@+id/etkinlikler">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
 
-                <android.support.v7.widget.CardView
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:id="@+id/kisayolekle"
-                    android:layout_width="160dp"
-                    android:layout_height="120dp"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/icon_events"
+                        android:padding="8dp"/>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="10dp"
+                        android:textColor="@color/gtu_red"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:text="Etkinlikler" />
 
-                        <ImageView
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:background="@drawable/circlebackgroundwhite"
-                            android:src="@drawable/add_circle_grey_192x192"
-                            android:padding="10dp"/>
+                </LinearLayout>
 
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-
-
-            </LinearLayout>
-
-
-
+            </android.support.v7.widget.CardView>
 
 
 
-        </LinearLayout>
+            <android.support.v7.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_width="90dp"
+                android:elevation="8dp"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0.0px"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                app:cardCornerRadius="20dp"
+                card_view:cardElevation="10dp"
+                card_view:cardPreventCornerOverlap="false"
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:id="@+id/transkript">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/icon_transkript"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="10dp"
+                        android:textColor="@color/gtu_yellow"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:text="Transkript" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
 
 
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="20dp"
+                android:dividerHeight="0.0px"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                card_view:cardElevation="10dp"
+                card_view:cardPreventCornerOverlap="false"
+                android:layout_width="90dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:id="@+id/yemekBakiye">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/icon_wallet"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="10dp"
+                        android:textColor="@color/gtu_blue"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginTop="3dp"
+                        android:text="Yemek Bakiye" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="20dp"
+                android:dividerHeight="0.0px"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                card_view:cardElevation="10dp"
+                card_view:cardPreventCornerOverlap="false"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:id="@+id/bolumduyulari">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/bolumduyurulari"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="10dp"
+                        android:textColor="@color/gtu_blue"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:text="Bölüm Duyuruları" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="20dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_width="90dp"
+                android:elevation="8dp"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0.0px"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                card_view:cardElevation="10dp"
+                card_view:cardPreventCornerOverlap="false"
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:id="@+id/foodMenu">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/icon_meal"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="10dp"
+                        android:textColor="@color/gtu_red"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginTop="3dp"
+                        android:text="Yemek Menüsü" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="20dp"
+                android:dividerHeight="0.0px"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                card_view:cardElevation="10dp"
+                card_view:cardPreventCornerOverlap="false"
+                android:layout_width="90dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:id="@+id/gtuDuyurular">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/icon_announcement"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="10dp"
+                        android:textColor="@color/yellow"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:text="Duyurular" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="20dp"
+                android:dividerHeight="0.0px"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                card_view:cardElevation="10dp"
+                card_view:cardPreventCornerOverlap="false"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:id="@+id/academicCalendar">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/calendar"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="10dp"
+                        android:textColor="@color/gtu_yellow"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:text="Akademik Takvim" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:dividerHeight="0.0px"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                card_view:cardElevation="10dp"
+                app:cardCornerRadius="20dp"
+                card_view:cardPreventCornerOverlap="false"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:id="@+id/login">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/login"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="10dp"
+                        android:textColor="@color/gtu_blue"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:text="Login" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="20dp"
+                android:dividerHeight="0.0px"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                card_view:cardElevation="10dp"
+                card_view:cardPreventCornerOverlap="false"
+                android:layout_width="90dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:id="@+id/aboutUs">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/icon_about"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="10dp"
+                        android:textColor="@color/gtu_red"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:text="Hakkımızda" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="20dp"
+                android:dividerHeight="0.0px"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                card_view:cardElevation="10dp"
+                card_view:cardPreventCornerOverlap="false"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:id="@+id/harcDurumu">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/icon_harc"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="10dp"
+                        android:textColor="@color/gtu_red"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:text="Harc Bilgisi" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+        </RelativeLayout>
 
     </ScrollView>
 
-
-
-
-
-
-
-</LinearLayout>
+</RelativeLayout>

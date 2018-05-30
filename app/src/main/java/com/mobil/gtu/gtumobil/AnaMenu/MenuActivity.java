@@ -1,6 +1,5 @@
 package com.mobil.gtu.gtumobil.AnaMenu;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -24,32 +23,21 @@ public class MenuActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anamenu_list_adapter);
 
-        ListView listView = (ListView) findViewById(R.id.menuListView);
+        ListView listView = findViewById(R.id.menuListView);
 
-        final Button saveButton = (Button) findViewById(R.id.shortWaySaveButton);
+        final Button saveButton = findViewById(R.id.shortWaySaveButton);
 
         final List<MenuClass> users = new ArrayList<>();
 
         Veritabani vt = new Veritabani(MenuActivity.this);
 
-        List<MenuClass> veriler = new ArrayList<MenuClass>();
+        List<MenuClass> veriler ;
         veriler=vt.VeriListele();
 
         for(int i = 0 ;i<veriler.size();i++)
         {
             users.add(veriler.get(i));
         }
-
-        for(int i = 0 ;i<veriler.size();i++)
-        {
-            Log.d("adasd", vt.VeriListele().get(i).toString());
-        }
-
-        /*users.add(new MenuClass(false,"Ulasim"));
-        users.add(new MenuClass(false,"Haberler"));
-        users.add(new MenuClass(false,"Rehber"));
-        users.add(new MenuClass(false,"Duyurular"));
-        users.add(new MenuClass(false,"Etkinlikler"));*/
 
         final CustomAdapter adapter = new CustomAdapter(this,users);
         listView.setAdapter(adapter);
@@ -69,14 +57,12 @@ public class MenuActivity extends AppCompatActivity
 
                 users.set(position,model);
                 adapter.updateRecord(users);
-
             }
         });
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
                 Veritabani vt = new Veritabani(MenuActivity.this);
                 ArrayList value = new ArrayList();
@@ -91,21 +77,20 @@ public class MenuActivity extends AppCompatActivity
                         String.valueOf(value.get(1)),
                         String.valueOf(value.get(2)),
                         String.valueOf(value.get(3)),
-                        String.valueOf(value.get(4)));
-
-                for(int k =0;k<1;k++)
-                {
-                    Log.d("adasd", String.valueOf(vt.VeriListele().get(k).toString()));
-                }
-
+                        String.valueOf(value.get(4)),
+                        String.valueOf(value.get(5)),
+                        String.valueOf(value.get(6)),
+                        String.valueOf(value.get(7)),
+                        String.valueOf(value.get(8)),
+                        String.valueOf(value.get(9)),
+                        String.valueOf(value.get(10)),
+                        String.valueOf(value.get(11)));
 
                 Intent u = new Intent(getBaseContext(),MainActivity.class);
                 startActivityForResult(u, 1);
 
-
             }
         });
-
 
     }
 }

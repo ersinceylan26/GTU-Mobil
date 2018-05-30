@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/arkaplan"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/aaa">
+
+        <ImageView
+            android:layout_marginRight="10dp"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/iiicon" />
+
+        <TextView
+            android:id="@+id/Title"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Rehber"
+            android:textSize="15dp"
+            android:fontFamily="Roboto regular"
+            android:textColor="@color/gtu_blue" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/guideSearchTxt"
+            android:textColor="@color/gtu_black"
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/guideSearchButton"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ARAMA"
+            android:textColor="@color/gtu_white"
+            android:background="@drawable/buttonarama"
+            android:src="@drawable/ic_search_black_24dp"/>
+
+
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/arkaplan"
+        android:id="@+id/guideRecycler">
+
+
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+</LinearLayout>

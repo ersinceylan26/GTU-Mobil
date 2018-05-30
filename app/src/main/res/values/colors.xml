@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#455A64</color>
-    <color name="colorPrimaryDark">#37474F</color>
+    <color name="colorPrimaryDark">#000</color>
     <color name="colorAccent">#25666f</color>
     <color name="gtu_blue">#233b77</color>
     <color name="gtu_red">#c1203b</color>
@@ -17,7 +17,9 @@
     <color name="gri">#ababab</color>
     <color name="koyugri">#8f8f8f</color>
     <color name="acikgri">#e7e7e7</color>
-    <color name="arkaplan">#fffffa</color>
+    <color name="arkaplan">#fcfcfa</color>
     <color name="sitearkaplan">#fbfbf9</color>
+    <color name="acikgri2">#f8f8f8</color>
+
 
 </resources>
