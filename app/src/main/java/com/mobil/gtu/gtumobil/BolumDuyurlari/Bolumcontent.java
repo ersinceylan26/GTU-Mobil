@@ -33,7 +33,7 @@ public class Bolumcontent extends AppCompatActivity
 
         pb = findViewById(R.id.newContentProgressBar);
 
-        webviev = (WebView) findViewById(R.id.wbNewContent);
+        webviev = findViewById(R.id.wbNewContent);
         webviev.getSettings().setJavaScriptEnabled(true);
         webviev.getSettings().setDefaultTextEncodingName("utf-8");
         webviev.setBackgroundColor(Color.TRANSPARENT);

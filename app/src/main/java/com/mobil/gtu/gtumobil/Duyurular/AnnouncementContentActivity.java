@@ -1,5 +1,6 @@
 package com.mobil.gtu.gtumobil.Duyurular;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,31 +10,28 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
-
 import com.mobil.gtu.gtumobil.R;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
 import java.io.IOException;
 
 public class AnnouncementContentActivity extends AppCompatActivity
 {
-    private ProgressDialog progressDialog;
     private WebView webviev;
     private String newUrl="";
     String data="";
-    ProgressBar pb;
+    ProgressBar progressBar;
 
+    @SuppressLint("SetJavaScriptEnabled")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_announcement_content_layout);
 
-        pb = findViewById(R.id.announcementContentProgressBar);
+        progressBar = findViewById(R.id.announcementContentProgressbar);
+        webviev = findViewById(R.id.wbAnnouncementContent);
 
-        webviev = (WebView) findViewById(R.id.wbAnnouncementContent);
         webviev.getSettings().setJavaScriptEnabled(true);
         webviev.getSettings().setDefaultTextEncodingName("utf-8");
         webviev.setBackgroundColor(Color.TRANSPARENT);
@@ -42,7 +40,6 @@ public class AnnouncementContentActivity extends AppCompatActivity
         newUrl = intent.getStringExtra("nameUrl");
 
         new fetchData().execute();
-
     }
 
     public class fetchData extends AsyncTask<Void,Void,Void> {
@@ -51,7 +48,7 @@ public class AnnouncementContentActivity extends AppCompatActivity
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             webviev.loadDataWithBaseURL(null,data,"text/html","UTF-8",null);
-            pb.setVisibility(View.GONE);
+            progressBar.setVisibility(View.GONE);
         }
 
         @Override

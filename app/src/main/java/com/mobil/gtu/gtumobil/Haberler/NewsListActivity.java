@@ -1,6 +1,5 @@
 package com.mobil.gtu.gtumobil.Haberler;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
@@ -10,14 +9,11 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
-
 import com.mobil.gtu.gtumobil.R;
-
 import org.jsoup.Jsoup;
 import org.jsoup.select.Elements;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-
 import java.io.IOException;
 
 public class NewsListActivity extends AppCompatActivity
@@ -26,18 +22,18 @@ public class NewsListActivity extends AppCompatActivity
     private String newsListUrl="";
     private WebView wbNewList;
     String data="";
-    ProgressBar pb;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_announcement_list_layout);
+        setContentView(R.layout.activity_news_list_layout);
 
-        pb = findViewById(R.id.announcementsListProgressBar);
+        progressBar = findViewById(R.id.newsListProgressBar);
 
-        wbNewList = findViewById(R.id.wbAnnouncement);
-        newsListUrl="http://www.gtu.edu.tr/kategori/9/0/display.aspx?languageId=1";
+        wbNewList = findViewById(R.id.wbNewsList);
+        newsListUrl="http://www.gtu.edu.tr/kategori/8/0/display.aspx?languageId=1";
         wbNewList.getSettings().setJavaScriptEnabled(true);
         wbNewList.getSettings().setDefaultTextEncodingName("utf-8");
         wbNewList.setBackgroundColor(Color.TRANSPARENT);
@@ -54,9 +50,9 @@ public class NewsListActivity extends AppCompatActivity
 
         });
 
+        progressBar.setVisibility(View.VISIBLE);
         new fetchNewsList().execute();
     }
-
 
     public class fetchNewsList extends AsyncTask<Void,Void,Void> {
 
@@ -64,7 +60,7 @@ public class NewsListActivity extends AppCompatActivity
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             wbNewList.loadDataWithBaseURL(null,data,"text/html","UTF-8",null);
-            pb.setVisibility(View.GONE);
+            progressBar.setVisibility(View.GONE);
         }
 
         @Override

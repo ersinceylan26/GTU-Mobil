@@ -22,16 +22,16 @@ import java.io.IOException;
 public class ContentActivity extends AppCompatActivity
 {
     private ProgressDialog progressDialog;
-    private WebView webviev;
     private String newUrl="";
+    ProgressBar progressBar;
+    private WebView webviev;
     String data="";
-    ProgressBar pb;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_duyuru_content_layout);
 
-        pb = findViewById(R.id.bolumDuyuruContentProgressBar);
+        progressBar = findViewById(R.id.bolumContentProgressBar);
 
         webviev = (WebView) findViewById(R.id.wbBolumDuyuruContent);
         webviev.getSettings().setJavaScriptEnabled(true);
@@ -40,6 +40,8 @@ public class ContentActivity extends AppCompatActivity
 
         Intent intent = getIntent();
         newUrl = intent.getStringExtra("nameUrl");
+
+        progressBar.setVisibility(View.VISIBLE);
 
         new fetchData().execute();
 
@@ -51,7 +53,7 @@ public class ContentActivity extends AppCompatActivity
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             webviev.loadDataWithBaseURL(null,data,"text/html","UTF-8",null);
-            pb.setVisibility(View.GONE);
+            progressBar.setVisibility(View.GONE);
         }
 
         @Override

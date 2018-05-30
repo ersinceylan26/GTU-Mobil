@@ -50,24 +50,21 @@ public class CustomAdapter extends BaseAdapter
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        ViewHolder holder = null;
+        ViewHolder holder ;
 
         if(convertView==null)
         {
             convertView = inflater.inflate(R.layout.activity_anamenu_list_layout,parent,false);
 
             holder = new ViewHolder();
-            holder.menuName = (TextView)convertView.findViewById(R.id.menuName);
-            holder.menuCheck = (ImageView)convertView.findViewById(R.id.menuCheck);
+            holder.menuName = convertView.findViewById(R.id.menuName);
+            holder.menuCheck = convertView.findViewById(R.id.menuCheck);
 
             convertView.setTag(holder);
         }
-        else
 
         holder = (ViewHolder) convertView.getTag();
-
         MenuClass model = users.get(position);
-
         holder.menuName.setText(model.getMenuName());
 
         if(model.isSelected()) {
@@ -78,7 +75,6 @@ public class CustomAdapter extends BaseAdapter
 
 
         return convertView;
-
     }
 
     public void updateRecord(List<MenuClass> user)
@@ -86,8 +82,6 @@ public class CustomAdapter extends BaseAdapter
         this.users=user;
         notifyDataSetChanged();
     }
-
-
 
     class ViewHolder
     {

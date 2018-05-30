@@ -34,22 +34,20 @@
 
     </LinearLayout>
 
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/newsListProgressBar" />
+
     <WebView
         android:background="@color/arkaplan"
         android:layout_margin="20dp"
-        android:id="@+id/wb"
+        android:id="@+id/wbNewsList"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </WebView>
 
-    <ProgressBar
-        android:id="@+id/newsListProgressBar"
-        style="?android:attr/process"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="221dp" />
 
 </LinearLayout>

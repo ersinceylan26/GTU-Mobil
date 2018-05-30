@@ -3,7 +3,6 @@ package com.mobil.gtu.gtumobil.BolumDuyurlari;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -13,15 +12,14 @@ import com.mobil.gtu.gtumobil.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FacultyAcitivity extends AppCompatActivity
-{
+public class FacultyAcitivity extends AppCompatActivity {
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faculty_list_adapter);
 
-        ListView listView = (ListView) findViewById(R.id.facultyListView);
+        ListView listView = findViewById(R.id.facultyListView);
 
         final List<FacultyClass> users = new ArrayList<>();
 
@@ -37,13 +35,9 @@ public class FacultyAcitivity extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                FacultyClass model = users.get(position);
-
                 Intent intent = new Intent(FacultyAcitivity.this, DepartmentAcitivity.class);
                 intent.putExtra("number",String.valueOf(position));
                 startActivity(intent);
-
-
             }
         });
 

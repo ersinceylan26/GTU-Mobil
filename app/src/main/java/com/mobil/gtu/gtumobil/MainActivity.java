@@ -129,7 +129,6 @@ public class MainActivity extends AppCompatActivity
                     count=0;
                     RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)allCardView.get(i).getLayoutParams();
                     params.addRule(RelativeLayout.BELOW, leftCornerCv.getId());
-
                     allCardView.get(i).setLayoutParams(params);
                     leftCornerCv=allCardView.get(i);
                 }

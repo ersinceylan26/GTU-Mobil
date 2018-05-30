@@ -6,11 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-
 import com.mobil.gtu.gtumobil.R;
-
 import java.util.List;
-
 
 public class FacultyAdapter extends BaseAdapter
 {
@@ -47,24 +44,23 @@ public class FacultyAdapter extends BaseAdapter
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        FacultyiewHolder holder = null;
+        FacultyiewHolder holder ;
 
         if(convertView==null)
         {
             convertView = inflater.inflate(R.layout.activity_faculty_list_layout,parent,false);
 
             holder = new  FacultyiewHolder();
-            holder.facultyName = (TextView)convertView.findViewById(R.id.facultyName);
+            holder.facultyName = convertView.findViewById(R.id.facultyName);
 
             convertView.setTag(holder);
         }
         else
 
         holder = (FacultyiewHolder) convertView.getTag();
-
         FacultyClass model = facultyClassList.get(position);
-
         holder.facultyName.setText(model.getFacultyName());
+
         return convertView;
     }
 

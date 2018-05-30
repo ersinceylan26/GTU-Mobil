@@ -27,9 +27,9 @@ public class GuideActivity extends AppCompatActivity
         lstContact = new ArrayList<>();
         lstContactSearch = new ArrayList<>();
 
-        lstContact.add(new Contact("Yusuf Sinan Akgül","Öğretim Üyesi","0 (212) 333 22 11","yusufsinan@gtu.edu.tr"));
-        lstContact.add(new Contact("Mehmet Göktürk","Öğretim Üyesi","0 (212) 444 22 11","mgokturk@gtu.edu.tr"));
-        lstContact.add(new Contact("Hasari Çelebi","Öğretim Üyesi","0 (212) 555 22 11","hasaricelebi@gtu.edu.tr"));
+        lstContact.add(new Contact("Yusuf Sinan Akgül","Öğretim Üyesi","0 (212) 333 22 11","akgul@gtu.edu.tr"));
+        lstContact.add(new Contact("Mehmet Göktürk","Öğretim Üyesi","0 (212) 444 22 11","gokturk@gtu.edu.tr"));
+        lstContact.add(new Contact("Hasari Çelebi","Öğretim Üyesi","0 (212) 555 22 11","hcelebi@gtu.edu.tr"));
         lstContact.add(new Contact("Meral Şahin","Bil. Müh. Sekreterlik","0 (212) 666 22 11","meralsahin@gtu.edu.tr"));
 
         myRecycler = findViewById(R.id.guideRecycler);

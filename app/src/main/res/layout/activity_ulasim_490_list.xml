@@ -202,7 +202,7 @@
             android:background="@color/arkaplan"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/list490">
+            android:id="@+id/listGidis490">
 
         </ListView>
 
@@ -212,7 +212,7 @@
             android:background="@color/arkaplan"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/list4902">
+            android:id="@+id/listGelis490">
 
         </ListView>
 

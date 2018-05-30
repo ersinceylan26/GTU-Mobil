@@ -56,7 +56,8 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".BolumDuyurlari.DepartmentAnnouncementListActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".BolumDuyurlari.ContentActivity" />
+        <activity android:name=".BolumDuyurlari.ContentActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Duyurular.AnnouncementListActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Duyurular.AnnouncementContentActivity"
@@ -69,7 +70,7 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".FoodMenu.FoodMenuActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Ulasim.TableAcitivity"
+        <activity android:name=".Ulasim.TableActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".DENEME" />
 

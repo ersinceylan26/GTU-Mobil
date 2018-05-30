@@ -1,5 +1,6 @@
 package com.mobil.gtu.gtumobil.Duyurular;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
@@ -9,34 +10,29 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
-
-import com.mobil.gtu.gtumobil.Haberler.NewContentActivity;
 import com.mobil.gtu.gtumobil.R;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
 import java.io.IOException;
 
 public class AnnouncementListActivity extends AppCompatActivity
 {
-
     private String newsListUrl="";
     private WebView wbNewList;
+    ProgressBar progressBar;
     String data="";
-    ProgressBar pb;
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_announcement_list_layout);
-
-        pb = findViewById(R.id.announcementsListProgressBar);
-
+        progressBar = findViewById(R.id.newsListProgressbar);
         wbNewList = findViewById(R.id.wbAnnouncement);
+
         newsListUrl="http://www.gtu.edu.tr/kategori/9/0/display.aspx?languageId=1";
         wbNewList.getSettings().setJavaScriptEnabled(true);
         wbNewList.getSettings().setDefaultTextEncodingName("utf-8");
@@ -54,17 +50,19 @@ public class AnnouncementListActivity extends AppCompatActivity
 
         });
 
+        progressBar.setVisibility(View.VISIBLE);
         new fetchNewsList().execute();
     }
 
 
+    @SuppressLint("StaticFieldLeak")
     public class fetchNewsList extends AsyncTask<Void,Void,Void> {
 
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             wbNewList.loadDataWithBaseURL(null,data,"text/html","UTF-8",null);
-            pb.setVisibility(View.GONE);
+            progressBar.setVisibility(View.GONE);
         }
 
         @Override
@@ -81,7 +79,7 @@ public class AnnouncementListActivity extends AppCompatActivity
                 data+="<ul>";
 
                 for(int i = 0; i < 20; i++) {
-                    data += hhh.get(i).toString();
+                    data+= hhh.get(i).toString();
                     data+="<br>";
                 }
 

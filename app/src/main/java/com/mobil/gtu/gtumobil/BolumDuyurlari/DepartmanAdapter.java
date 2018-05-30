@@ -47,24 +47,21 @@ public class DepartmanAdapter extends BaseAdapter
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        FacultyiewHolder holder = null;
+        FacultyiewHolder holder;
 
-        if(convertView==null)
-        {
+        if(convertView==null) {
             convertView = inflater.inflate(R.layout.activity_department_list_layout,parent,false);
 
             holder = new  FacultyiewHolder();
-            holder.departmentName = (TextView)convertView.findViewById(R.id.departmentName);
+            holder.departmentName = convertView.findViewById(R.id.departmentName);
 
             convertView.setTag(holder);
         }
-        else
 
         holder = (FacultyiewHolder) convertView.getTag();
-
         DepartmentClass model = departmentClassList.get(position);
-
         holder.departmentName.setText(model.getDepartmentName());
+
         return convertView;
     }
 

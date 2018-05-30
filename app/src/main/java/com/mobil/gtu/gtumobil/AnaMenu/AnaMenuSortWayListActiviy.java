@@ -24,8 +24,7 @@ public class AnaMenuSortWayListActiviy extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shortway_list_activities);
 
-        ListView listView = (ListView) findViewById(R.id.listView);
-
+        ListView listView = findViewById(R.id.listView);
         CustomAdapter customAdapter = new CustomAdapter();
 
         listView.setAdapter(customAdapter);
@@ -54,7 +53,7 @@ public class AnaMenuSortWayListActiviy extends AppCompatActivity
         public View getView(int i, View view, ViewGroup viewGroup) {
 
             view=getLayoutInflater().inflate(R.layout.activity_shortway_custom_adapter,null);
-            TextView textView = (TextView)view.findViewById(R.id.textView);
+            TextView textView = view.findViewById(R.id.textView);
 
             textView.setText(activities[i]);
 

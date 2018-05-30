@@ -40,7 +40,6 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.UlasimViewHo
         });
 
         return vHolder;
-
     }
 
     @Override
@@ -50,7 +49,6 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.UlasimViewHo
         holder.rehberunvan.setText(mData.get(position).getUnvan());
         holder.rehbernumara.setText(mData.get(position).getTel());
         holder.rehbermail.setText(mData.get(position).getMail());
-
     }
 
     @Override
@@ -70,7 +68,6 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.UlasimViewHo
             rehberunvan =  itemView.findViewById(R.id.rehberunvan);
             rehbernumara = itemView.findViewById(R.id.rehbernumara);
             rehbermail = itemView.findViewById(R.id.rehbermail);
-
         }
     }
 

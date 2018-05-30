@@ -7,14 +7,10 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
-
-import com.mobil.gtu.gtumobil.BolumDuyurlari.DepartmentAcitivity;
-import com.mobil.gtu.gtumobil.BolumDuyurlari.DepartmentAnnouncementListActivity;
 import com.mobil.gtu.gtumobil.R;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -30,16 +26,16 @@ import java.util.List;
 
 public class UlasimActivity extends AppCompatActivity
 {
-    RecyclerView recyclerView;
-    public UlasimAdapter ulasimAdapter;
-    private String url490="";
-    private String url17B="";
+    Button button490, buttonRing;
+    UlasimAdapter ulasimAdapter;
     List<UlasimParent> parents;
+    RecyclerView recyclerView;
+    ImageButton expandSearch;
     Elements element17B;
+    String url490="";
+    String url17B="";
     ProgressBar pb;
     String data="";
-    ImageButton expandSearch;
-    Button a1,a2,a3;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState){
@@ -49,54 +45,31 @@ public class UlasimActivity extends AppCompatActivity
         url490="http://www.kocaeli.bel.tr/tr/main/hatlar/490";
         url17B="http://www.iett.istanbul/tr/main/duraklar/212091/BAYRAMO%C4%9ELU-%C4%B0ETT-Duraktan-Ge%C3%A7en-Hatlar-Durak-Bilgileri-Hatt%C4%B1n-Duraktan-Ge%C3%A7i%C5%9F-Saatleri#StaionLiveData";
         pb = findViewById(R.id.ulasimProgressBar);
-        recyclerView = (RecyclerView) findViewById(R.id.myRecyclerView);
+        recyclerView = findViewById(R.id.myRecyclerView);
         expandSearch = findViewById(R.id.expandSearch);
-
 
         recyclerView.animate()
                 .translationY(0)
                 .setDuration(1000)
                 .setStartDelay(300);
 
-        new veriCek().execute();
+        new fetchData().execute();
 
-        a1 = findViewById(R.id.loginButton11);
-        a2 = findViewById(R.id.loginButton22);
-        a3 = findViewById(R.id.loginButton33);
+        button490 = findViewById(R.id.loginButton11);
+        buttonRing = findViewById(R.id.loginButton33);
 
-        a1.setOnClickListener(new View.OnClickListener() {
+        button490.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(UlasimActivity.this, TableAcitivity.class);
-                intent.putExtra("number",String.valueOf("0"));
+                Intent intent = new Intent(UlasimActivity.this, TableActivity.class);
                 startActivity(intent);
-
             }
         });
 
-
-
-        }
-
-    public List<UlasimParent> getParents() {
-
-        parents = new ArrayList<>(6);
-        List<UlasimChild> children = new ArrayList<>(3);
-
-        children.add(new UlasimChild("asdasd"));
-        children.add(new UlasimChild("asdasd"));
-        children.add(new UlasimChild("asdasd"));
-
-        parents.add(new UlasimParent("17B (Pendik Yönü)", children));
-        parents.add(new UlasimParent("490 (Gebze Yönü)", children));
-        parents.add(new UlasimParent("Ring (Danışma Hareket)", children));
-        parents.add(new UlasimParent("Ring (Kimya Hareket)", children));
-
-        return parents;
     }
 
-    public List<UlasimParent> getParents2(Elements onYediB) {
+    public List<UlasimParent> getParents(Elements onYediB) {
 
         parents = new ArrayList<>(6);
         List<UlasimChild> children = new ArrayList<>(3);
@@ -113,26 +86,31 @@ public class UlasimActivity extends AppCompatActivity
         children.add(new UlasimChild("asdaaaaaaaaaasd"));
 
         parents.add(new UlasimParent("17B (Pendik Yönü)", onYediBList));
+        parents.add(new UlasimParent("17B (Gebze Yönü)", children));
         parents.add(new UlasimParent("490 (Gebze Yönü)", children));
+        parents.add(new UlasimParent("490 (KYK Yönü)", children));
         parents.add(new UlasimParent("Ring (Danışma Hareket)", children));
         parents.add(new UlasimParent("Ring (Kimya Hareket)", children));
 
         return parents;
     }
 
-    public class veriCek extends AsyncTask<Void,Void,Void>
+    public class fetchData extends AsyncTask<Void,Void,Void>
     {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
 
-            getParents2(element17B);
+            getParents(element17B);
             ulasimAdapter = new UlasimAdapter(parents);
 
             recyclerView.setLayoutManager(new LinearLayoutManager(getBaseContext()));
             recyclerView.setAdapter(ulasimAdapter);
 
             pb.setVisibility(View.GONE);
+
+            button490.setVisibility(View.VISIBLE);
+            buttonRing.setVisibility(View.VISIBLE);
 
         }
 
@@ -143,16 +121,10 @@ public class UlasimActivity extends AppCompatActivity
                 Document document490 = Jsoup.connect(url490).get();
                 Elements element490 = document490.select("div.col-md-6.col");
                 Element style = document490.head();
-                Elements content_H2 = element490.select("table");
-                Elements content_H22 = element490.select("tbody");
-
-
+                Elements content = element490.select("tbody");
 
                 data+=style;
-                data+=content_H22.get(2).outerHtml();
-                Log.d("ersoceylan", data);
-
-                Document document4902 = Jsoup.connect(url490).get();
+                data+=content.get(2).outerHtml();
 
                 Document document17B = Jsoup.connect(url17B).get();
                 element17B = document17B.select("td.td_LineEstimated");
@@ -176,11 +148,8 @@ public class UlasimActivity extends AppCompatActivity
         }
 
         @Override
-        protected void onPreExecute() {
+        protected void onPreExecute() { }
 
-
-
-        }
     }
 
 }

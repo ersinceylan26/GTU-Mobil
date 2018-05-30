@@ -29,8 +29,6 @@ public class Veritabani extends SQLiteOpenHelper {
     private static final String ROW_HARC= "Harc";
     private static final String ROW_HAKKIMIZDA= "Hakkimizda";
 
-
-
     public Veritabani(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -54,13 +52,10 @@ public class Veritabani extends SQLiteOpenHelper {
                 + ROW_HAKKIMIZDA + " TEXT NOT NULL)");
 
         setDefaultLabel(db);
-
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        onCreate(db);
-    }
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) { onCreate(db); }
 
     public void VeriEkle(String var0, String var1, String var2, String var3, String var4,
             String var5, String var6, String var7, String var8, String var9, String var10,String var11){
@@ -85,22 +80,21 @@ public class Veritabani extends SQLiteOpenHelper {
 
 
             db.insert(TABLO, null,cv);
-        }catch (Exception e){
-        }
+        }catch (Exception e){ }
+
         db.close();
     }
 
     public List<MenuClass> VeriListele(){
-        List<String> veriler = new ArrayList<String>();
-        List<MenuClass> veriler2 = new ArrayList<MenuClass>();
-
+        List<String> veriler = new ArrayList<>();
+        List<MenuClass> veriler2 = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
+
         try {
             String[] stunlar = {ROW_ID, ROW_ULASIM_,ROW_HABERLER,ROW_REHBER,ROW_DUYURULAR,ROW_ETKINLIKLER,
                     ROW_TRANSKRIPT,ROW_YEMEKBAKIYE,ROW_BOLUMDUYULARI,ROW_YEMEKMENUSU,ROW_AKADEMIKTAKVIM,ROW_LOGIN,ROW_HARC,ROW_HAKKIMIZDA};
             Cursor cursor = db.query(TABLO, stunlar,null,null,null,null,null);
             while (cursor.moveToNext()){
-
                 veriler2.add(new MenuClass((equalDataSources(cursor.getString(1))),cursor.getColumnName(1).substring(0,1).toUpperCase()+cursor.getColumnName(1).substring(1)));
                 veriler2.add(new MenuClass((equalDataSources(cursor.getString(2))),cursor.getColumnName(2).substring(0,1).toUpperCase()+cursor.getColumnName(2).substring(1)));
                 veriler2.add(new MenuClass((equalDataSources(cursor.getString(3))),cursor.getColumnName(3).substring(0,1).toUpperCase()+cursor.getColumnName(3).substring(1)));
@@ -127,14 +121,14 @@ public class Veritabani extends SQLiteOpenHelper {
                         + " - "
                         + cursor.getString(5));
             }
-        }catch (Exception e){
-        }
+        }catch (Exception e){ }
+
         db.close();
+
         return veriler2;
     }
 
-    public boolean equalDataSources(String value)
-    {
+    public boolean equalDataSources(String value){
         if(value.equals("false"))
         {
             return false;
@@ -162,8 +156,7 @@ public class Veritabani extends SQLiteOpenHelper {
 
             db.insert(TABLO, null,cv);
         }
-        catch (Exception e){
-        }
+        catch (Exception e){ }
     }
 
 }

@@ -14,17 +14,14 @@ import java.util.List;
 
 public class DepartmentAcitivity extends AppCompatActivity
 {
-
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_department_list_adapter);
+        ListView listView = findViewById(R.id.departmentListView);
 
         Intent intent = this.getIntent();
         final String number = intent.getStringExtra("number");
-
-        ListView listView = findViewById(R.id.departmentListView);
-
         final List<DepartmentClass> users = new ArrayList<>();
 
         if(number.equals("0"))
@@ -64,14 +61,10 @@ public class DepartmentAcitivity extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                DepartmentClass model = users.get(position);
-
                 Intent intent = new Intent(DepartmentAcitivity.this, DepartmentAnnouncementListActivity.class);
                 intent.putExtra("facultyNumber",String.valueOf(number));
                 intent.putExtra("departmentNumber",String.valueOf(position));
                 startActivity(intent);
-
-
             }
         });
 

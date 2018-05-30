@@ -27,12 +27,18 @@
             android:id="@+id/Title"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="GTÜ Haberler"
+            android:text="GTÜ Duyurular"
             android:textSize="15dp"
             android:fontFamily="Roboto regular"
             android:textColor="@color/gtu_blue" />
 
     </LinearLayout>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/newsListProgressbar" />
 
     <WebView
         android:background="@color/arkaplan"

@@ -7,7 +7,38 @@
     android:background="@color/sitearkaplan"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/aaa">
 
+        <ImageView
+            android:layout_marginRight="10dp"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/iiicon" />
+
+        <TextView
+            android:id="@+id/Title"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Duyuru İçeriği"
+            android:textSize="15dp"
+            android:fontFamily="Roboto regular"
+            android:textColor="@color/gtu_blue" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/announcementContentProgressbar" />
 
     <WebView
         android:background="@color/sitearkaplan"
@@ -22,14 +53,6 @@
 
     </WebView>
 
-    <ProgressBar
-        android:id="@+id/announcementContentProgressBar"
-        style="?android:attr/process"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="214dp"
-        tools:ignore="MissingConstraints" />
+
 
 </LinearLayout>

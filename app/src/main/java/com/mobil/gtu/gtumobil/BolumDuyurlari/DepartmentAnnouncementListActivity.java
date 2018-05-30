@@ -33,15 +33,11 @@ public class DepartmentAnnouncementListActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_departments_list_layout);
-
         pb = findViewById(R.id.departmentsAnnouListProgressBar);
-
 
         Intent intent = this.getIntent();
         String facultyNumber = intent.getStringExtra("facultyNumber");
         String departmentName = intent.getStringExtra("departmentNumber");
-
-        Log.w("ersinceylan", facultyNumber+departmentName);
 
         if(facultyNumber.equals("3"))
         {
@@ -123,7 +119,6 @@ public class DepartmentAnnouncementListActivity extends AppCompatActivity
                 newsListUrl="http://www.gtu.edu.tr/kategori/424/0/display.aspx?languageId=1";
             }
         }
-
 
         wbNewList = findViewById(R.id.wbDepartmentsAnnouncment);
         wbNewList.getSettings().setJavaScriptEnabled(true);
